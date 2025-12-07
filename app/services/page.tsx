@@ -121,6 +121,7 @@ export default function ServicesPage() {
 			<IntroSection />
 			<ServiceGridSection />
 			<ProcessSection />
+			<TenantScreeningSection />
 			<FaqSection />
 		</main>
 	);
@@ -305,6 +306,190 @@ function ProcessSection() {
 						</div>
 					))}
 				</motion.div>
+			</div>
+		</section>
+	);
+}
+
+/* -------------------------- TENANT SCREENING -------------- */
+
+function TenantScreeningSection() {
+	return (
+		<section className="border-t border-neutral-800 bg-psr-charcoal">
+			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+				<div className="mb-8 grid gap-8 md:grid-cols-[1.3fr,1fr] md:items-start">
+					<div className="space-y-4">
+						<p className="text-[0.6rem] uppercase tracking-[0.3em] text-psr-soft-white/60">
+							Tenant screening services
+						</p>
+						<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl text-psr-ivory">
+							Premium tenant screening and background checks for
+							calm, confident landlords.
+						</h2>
+						<p className="text-sm text-psr-soft-white/75">
+							We use trusted third-party data providers (such as
+							RentPrep) and add our own verification and judgment
+							so you receive more than a raw report. You get a
+							clear, design-led perspective on who is moving into
+							your property.
+						</p>
+						<p className="text-sm text-psr-soft-white/70">
+							Our process is designed to be fast, compliant, and
+							considerate—protecting your investment while
+							providing a fair, consistent experience for every
+							applicant.
+						</p>
+					</div>
+
+					<div className="space-y-3 rounded-2xl border border-neutral-800 bg-psr-charcoal-soft/80 p-5 text-[0.85rem] text-psr-soft-white/80 shadow-card-soft/40">
+						<p className="font-semibold text-psr-ivory">
+							What you receive
+						</p>
+						<ul className="mt-2 space-y-2">
+							<li>• Verified identity and background.</li>
+							<li>
+								• Criminal and sex offender registry checks.
+							</li>
+							<li>
+								• Eviction history and prior landlord
+								references.
+							</li>
+							<li>
+								• Full credit report, credit score, and
+								tradeline review.
+							</li>
+							<li>
+								• Employment and income verification where
+								applicable.
+							</li>
+							<li>
+								• A clear, easy-to-read summary to support your
+								decision.
+							</li>
+						</ul>
+						<p className="mt-3 text-psr-soft-white/65">
+							Screening services are offered to landlords, small
+							portfolio owners, and design-minded investors who
+							want to protect their properties without turning the
+							process into a full-time job.
+						</p>
+					</div>
+				</div>
+
+				<div className="mt-10 grid gap-8 md:grid-cols-3 text-[0.85rem] text-psr-soft-white/80">
+					{/* Identity & Background */}
+					<div className="space-y-3">
+						<p className="text-[0.6rem] uppercase tracking-[0.3em] text-psr-gold/80">
+							Identity & background
+						</p>
+						<ul className="space-y-2">
+							<li>• Identity confirmation.</li>
+							<li>
+								• National, state, and county criminal
+								background checks.
+							</li>
+							<li>• Sex offender registry checks.</li>
+							<li>• Eviction history search.</li>
+						</ul>
+					</div>
+
+					{/* Financial & Credit */}
+					<div className="space-y-3">
+						<p className="text-[0.6rem] uppercase tracking-[0.3em] text-psr-gold/80">
+							Financial & credit
+						</p>
+						<ul className="space-y-2">
+							<li>• Full credit report and credit score.</li>
+							<li>
+								• Tradeline review (late payments, collections,
+								bankruptcies).
+							</li>
+							<li>
+								• Income and employment verification where
+								applicable.
+							</li>
+						</ul>
+					</div>
+
+					{/* Rental history & optional */}
+					<div className="space-y-3">
+						<p className="text-[0.6rem] uppercase tracking-[0.3em] text-psr-gold/80">
+							Rental history & extras
+						</p>
+						<ul className="space-y-2">
+							<li>
+								• Prior landlord references and payment history.
+							</li>
+							<li>
+								• Lease compliance and prior issues where
+								available.
+							</li>
+							<li>
+								• Optional social media screening
+								(compliance-backed).
+							</li>
+							<li>
+								• Optional document verification (IDs, pay
+								stubs, bank statements).
+							</li>
+							<li>
+								• A simple “tenant score” style risk summary.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div className="mt-10 grid gap-8 md:grid-cols-[1.3fr,1fr] text-[0.85rem] text-psr-soft-white/80">
+					<div className="space-y-3">
+						<p className="text-[0.6rem] uppercase tracking-[0.3em] text-psr-soft-white/60">
+							How it works
+						</p>
+						<ol className="space-y-2 list-decimal list-inside">
+							<li>
+								Collect applications and signed screening
+								consent from each applicant.
+							</li>
+							<li>
+								We order reports from trusted consumer reporting
+								agencies (CRAs) in a compliant way.
+							</li>
+							<li>
+								We add manual work: employment checks, landlord
+								calls, and fraud screening as needed.
+							</li>
+							<li>
+								We package everything into a clean, professional
+								screening report.
+							</li>
+							<li>
+								We include a clear summary and recommendations
+								to support your decision.
+							</li>
+						</ol>
+					</div>
+					<div className="space-y-3 rounded-2xl border border-neutral-800 bg-black/50 p-5">
+						<p className="font-semibold text-psr-ivory">
+							Designed for landlords and small portfolios
+						</p>
+						<p className="text-psr-soft-white/75">
+							Whether you own a single unit or a small portfolio,
+							our goal is the same: to help you choose reliable,
+							qualified tenants without turning screening into
+							guesswork.
+						</p>
+						<p className="text-psr-soft-white/70">
+							To start a screening request or ask about volume
+							screening for multiple units, use the contact form
+							and mention “tenant screening” in your message.
+						</p>
+						<a
+							href="/contact"
+							className="inline-block text-[0.75rem] tracking-[0.25em] uppercase text-psr-gold border-b border-psr-gold/50 pb-[2px] mt-2"
+						>
+							Request screening →
+						</a>
+					</div>
+				</div>
 			</div>
 		</section>
 	);

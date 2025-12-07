@@ -163,8 +163,8 @@ const servicesTeaser = [
 	},
 	{
 		label: "Landlord",
-		title: "Support & Guides",
-		body: "Frameworks, checklists, and systems for calm, design-conscious landlords.",
+		title: "Tenant Screening & Landlord Systems",
+		body: "Premium tenant screening, background checks, and calm landlord systems so you can make decisions with confidence.",
 	},
 ];
 
