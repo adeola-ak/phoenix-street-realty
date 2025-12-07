@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter, Playfair_Display } from "next/font/google";
 import { NavLink } from "@/components/NavLink";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
+import { SiteHeaderClient } from "@/components/SiteHeaderClient";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -36,57 +37,12 @@ export default function RootLayout({
 				className={`${inter.variable} ${playfair.variable} antialiased bg-psr-charcoal text-psr-soft-white`}
 			>
 				<div className="flex min-h-screen flex-col">
-					<SiteHeader />
+					<SiteHeaderClient />
 					<main className="flex-1">{children}</main>
 					<SiteFooter />
 				</div>
 			</body>
 		</html>
-	);
-}
-
-function SiteHeader() {
-	return (
-		<header className="sticky top-0 z-20 border-b border-neutral-800 bg-psr-charcoal/90 backdrop-blur">
-			<div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-				{/* Logo */}
-				<div className="flex items-center gap-3">
-					<div className="flex h-8 w-8 items-center justify-center rounded-xl border border-psr-soft-white/20 bg-psr-charcoal">
-						<span className="text-xs font-semibold tracking-[0.2em] text-psr-soft-white/80">
-							PS
-						</span>
-					</div>
-					<div className="flex flex-col">
-						<span className="text-[0.7rem] tracking-[0.3em] uppercase text-psr-soft-white/70">
-							Phoenix Street
-						</span>
-						<span className="text-[0.65rem] text-psr-soft-white/40">
-							realty &amp; home design
-						</span>
-					</div>
-				</div>
-
-				{/* Nav */}
-				<nav className="hidden items-center gap-8 md:flex">
-					<NavLink href="/">Home</NavLink>
-					<NavLink href="/services">Services</NavLink>
-					<NavLink href="/portfolio">Portfolio</NavLink>
-					<NavLink href="/blog">Journal</NavLink>
-					<NavLink href="/about">About</NavLink>
-					<NavLink href="/contact">Contact</NavLink>
-				</nav>
-
-				{/* CTA */}
-				<div className="hidden md:block">
-					<PrimaryButton
-						href="/contact"
-						className="px-5 py-2 text-[0.6rem]"
-					>
-						Private consult
-					</PrimaryButton>
-				</div>
-			</div>
-		</header>
 	);
 }
 
