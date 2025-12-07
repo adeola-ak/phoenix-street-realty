@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
+/* Light mode defaults */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #171717;
 }
 
+/* Connect CSS vars → Tailwind utilities (DO NOT merge into @theme) */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
 }
 
+/* PSR brand design tokens — ALL inside one @theme block */
+@theme {
+	/* Brand colors */
+	--color-psr-ink: #020617;
+	--color-psr-ink-soft: #0b1120;
+	--color-psr-gold: #fbbf24;
+	--color-psr-sand: #f3f4f6;
+
+	/* Extra radius */
+	--radius-3xl: 1.5rem;
+}
+
+/* Dark mode variables */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
 }
 
+/* Base body styling */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--background);
+	color: var(--foreground);
+	font-family: Arial, Helvetica, sans-serif;
 }
