@@ -1,6 +1,6 @@
 import React from "react";
 
-type PrimaryButtonProps =
+type AnchorOrButtonProps =
 	| (React.ButtonHTMLAttributes<HTMLButtonElement> & {
 			href?: undefined;
 	  })
@@ -8,16 +8,17 @@ type PrimaryButtonProps =
 			href: string;
 	  });
 
-export function PrimaryButton(props: PrimaryButtonProps) {
-	const baseClasses =
-		"inline-flex items-center justify-center rounded-full px-6 py-3 " +
-		"text-xs font-semibold uppercase tracking-[0.2em] " +
-		"transition duration-200 focus:outline-none " +
-		"focus-visible:ring-2 focus-visible:ring-psr-gold " +
-		"focus-visible:ring-offset-2 focus-visible:ring-offset-psr-ink";
+const baseClasses =
+	"inline-flex items-center justify-center rounded-xl px-7 py-3 " +
+	"text-[0.7rem] font-semibold tracking-[0.25em] uppercase " +
+	"transition duration-300 focus:outline-none " +
+	"focus-visible:ring-2 focus-visible:ring-psr-gold " +
+	"focus-visible:ring-offset-2 focus-visible:ring-offset-psr-charcoal";
 
+export function PrimaryButton(props: AnchorOrButtonProps) {
 	const variantClasses =
-		"bg-psr-gold text-slate-900 shadow-lg shadow-amber-500/40 hover:bg-amber-300";
+		"bg-psr-charcoal text-psr-soft-white border border-psr-gold/70 " +
+		"hover:bg-psr-gold hover:text-psr-charcoal";
 
 	const className = [baseClasses, variantClasses, props.className]
 		.filter(Boolean)
@@ -41,18 +42,10 @@ export function PrimaryButton(props: PrimaryButtonProps) {
 	);
 }
 
-type SecondaryButtonProps = PrimaryButtonProps;
-
-export function SecondaryButton(props: SecondaryButtonProps) {
-	const baseClasses =
-		"inline-flex items-center justify-center rounded-full px-6 py-3 " +
-		"text-xs font-semibold uppercase tracking-[0.2em] " +
-		"transition duration-200 focus:outline-none " +
-		"focus-visible:ring-2 focus-visible:ring-psr-gold " +
-		"focus-visible:ring-offset-2 focus-visible:ring-offset-psr-ink";
-
+export function SecondaryButton(props: AnchorOrButtonProps) {
 	const variantClasses =
-		"border border-slate-700 text-slate-200 hover:border-psr-gold hover:text-psr-gold";
+		"bg-transparent text-psr-soft-white border border-psr-soft-white/40 " +
+		"hover:border-psr-gold hover:text-psr-gold";
 
 	const className = [baseClasses, variantClasses, props.className]
 		.filter(Boolean)

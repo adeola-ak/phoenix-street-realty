@@ -1,230 +1,381 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { PrimaryButton, SecondaryButton } from "@/components/ui/PrimaryButton";
 
 const services = [
 	{
 		id: "virtual-design",
+		label: "Virtual design",
 		name: "Virtual interior design consultations",
-		tagline: "Room-by-room design support—wherever you are.",
+		tagline:
+			"Room-by-room direction for spaces that need a sharper point of view.",
 		idealFor: [
-			"Homeowners refreshing key rooms",
-			"Design-minded renters",
-			"Landlords wanting elevated but durable finishes",
+			"Homeowners refreshing key rooms before selling or renting",
+			"Design-minded renters who want impact without renovations",
+			"Landlords who want elevated, durable finishes and layouts",
 		],
 		includes: [
-			"Live video session to walk your space",
-			"Concept guidance on layout, color, and furniture",
-			"Follow-up summary with key recommendations",
+			"Live video walk-through of your space",
+			"Recommendations on layout, palette, and key pieces",
+			"Follow-up summary with priorities and next steps",
 		],
-		startingAt: "Starting at 60-minute sessions",
+		note: "Best for 1–2 rooms per session.",
 	},
 	{
 		id: "rental-prep",
-		name: "Rental-ready property prep",
-		tagline: "Make your rental feel premium, durable, and move-in ready.",
+		label: "Rental prep",
+		name: "Rental-ready property preparation",
+		tagline:
+			"Turnovers that feel intentional, efficient, and quietly luxurious.",
 		idealFor: [
-			"Landlords preparing for a new tenant",
-			"Owners converting a home into a rental",
-			"Hosts getting ready for listing photography",
+			"Landlords preparing for a new tenant or listing photos",
+			"Owners converting primary homes into rentals",
+			"Short-term rentals needing a design-led refresh",
 		],
 		includes: [
-			"Rent-ready assessment of your space",
-			"Custom checklist for repairs and upgrades",
-			"Guidance on finishes, lighting, and furniture",
+			"Rent-ready assessment with a prioritized checklist",
+			"Recommendations for finishes, lighting, and furniture",
+			"Guidance on photography, online presentation, and flow",
 		],
-		startingAt: "Ideal before listing photos or showings",
+		note: "Designed to support both DIY and existing on-the-ground teams.",
 	},
 	{
 		id: "styling-staging",
-		name: "Home styling & staging guidance",
-		tagline: "Styling that photographs beautifully and feels inviting.",
+		label: "Styling & staging",
+		name: "Styling & staging direction",
+		tagline: "Homes photographed and shown like understated editorials.",
 		idealFor: [
-			"Homeowners preparing to sell",
-			"Short-term rental hosts",
-			"Landlords wanting stronger listing photos",
+			"Homeowners preparing to hit the market (on or off MLS)",
+			"Sellers who want to avoid over-staging or generic looks",
+			"Hosts and landlords planning listing photography",
 		],
 		includes: [
-			"Styling strategy for key rooms",
-			"Recommendations for decor, art, and soft goods",
-			"Tips for maximizing natural light and flow",
+			"Room-by-room styling strategy",
+			"Recommendations for art, textiles, and key decor layers",
+			"Tips for lighting, angles, and photography styling",
 		],
-		startingAt: "Designed to support both DIY and pro staging",
+		note: "Pairs well with your existing stager or photographer.",
 	},
 	{
 		id: "landlord-support",
-		name: "Landlord support services",
-		tagline: "Calm, structured support for modern landlords.",
+		label: "Landlord support",
+		name: "Landlord systems & support",
+		tagline:
+			"Calm, design-conscious support for modern, detail-driven landlords.",
 		idealFor: [
-			"First-time landlords",
-			"Owners with multiple units",
-			"Anyone needing clearer systems and checklists",
+			"First-time landlords building systems from scratch",
+			"Owners with multiple units wanting a consistent standard",
+			"Anyone needing clearer move-in and move-out workflows",
 		],
 		includes: [
-			"Tenant screening support and criteria guidance",
-			"Move-in / move-out checklists",
-			"Rent-ready systems and reminders",
+			"Tenant screening criteria and support",
+			"Move-in / move-out checklists and templates",
+			"Rent-ready systems tailored to your portfolio",
 		],
-		startingAt: "Support tailored to your current portfolio",
+		note: "We are not a property management company; we help you think like one.",
 	},
 ];
 
 const faqs = [
 	{
-		question: "Do you work fully remote / virtually?",
-		answer: "Yes. Most design and landlord support services can be delivered virtually through video calls, photos, and floor plans. For local projects, in-person support may be available depending on scope.",
+		q: "Do you work with clients outside my city?",
+		a: "Yes. Most design consultations and landlord support services are delivered virtually via video, photos, and floor plans. For select projects, in-person support may be available depending on scope and location.",
 	},
 	{
-		question: "Can I start small with a single room or unit?",
-		answer: "Absolutely. Many clients start with a single room, unit, or property. Once we establish a look and system you love, we can scale that approach across more spaces.",
+		q: "Can I start with just one room or one unit?",
+		a: "Absolutely. Many clients start with a single room, unit, or property. Once we establish a standard you love, we can scale that same approach across additional spaces at your pace.",
 	},
 	{
-		question: "Do you handle full property management?",
-		answer: "Phoenix Street Realty focuses on design-forward strategy, rental prep, and landlord support. We can advise you on systems and help you evaluate local property management partners as needed.",
+		q: "Do you handle ongoing property management?",
+		a: "Phoenix Street Realty focuses on design-forward strategy, rental prep, and landlord systems. We can help you evaluate and coordinate with local management partners, but we do not operate as a traditional property management company.",
 	},
 	{
-		question: "What if I am not sure which service I need?",
-		answer: "That is completely normal. Start by telling us about your property and goals—renting, selling, refreshing, or investing—and we will recommend the right starting point.",
+		q: "What if I am not sure which service I need?",
+		a: "Start by telling us about your property, timeline, and goals—renting, selling, refreshing, or investing. We will recommend the clearest starting point and outline options from there.",
+	},
+];
+
+const processSteps = [
+	{
+		title: "01 · Intake",
+		body: 'You tell us about your property, timeline, and what "luxury" means for this space.',
+	},
+	{
+		title: "02 · Strategy",
+		body: "We define the look, the priorities, and the level of depth appropriate for your goals.",
+	},
+	{
+		title: "03 · Execution",
+		body: "We work through design, prep, or systems—virtually or alongside your existing team.",
+	},
+	{
+		title: "04 · Next move",
+		body: "We align your space with your broader portfolio plan: hold, sell, or reinvest.",
 	},
 ];
 
 export default function ServicesPage() {
 	return (
-		<main className="bg-psr-ink text-slate-50">
-			<section className="border-b border-slate-900/70">
-				<div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-					<div className="max-w-3xl space-y-4">
-						<p className="text-xs font-semibold uppercase tracking-[0.3em] text-psr-gold/80">
-							Services
-						</p>
-						<h1 className="text-3xl font-semibold md:text-4xl">
-							Design-forward services for real homes and real
-							portfolios.
-						</h1>
-						<p className="text-sm text-slate-300">
-							Phoenix Street Realty blends interior design, rental
-							prep, and landlord support so you do not have to
-							coordinate multiple vendors. Start where you are and
-							scale as your needs grow.
-						</p>
-					</div>
+		<main className="bg-psr-charcoal text-psr-soft-white">
+			<IntroSection />
+			<ServiceGridSection />
+			<ProcessSection />
+			<FaqSection />
+		</main>
+	);
+}
 
-					<div className="mt-8 flex flex-wrap gap-3 text-xs text-slate-400">
-						<span className="rounded-full border border-slate-700 bg-psr-ink-soft px-3 py-1">
-							Virtual consultations
-						</span>
-						<span className="rounded-full border border-slate-700 bg-psr-ink-soft px-3 py-1">
-							Design and operations in one
-						</span>
-						<span className="rounded-full border border-slate-700 bg-psr-ink-soft px-3 py-1">
-							Built for landlords and homeowners
-						</span>
-					</div>
+/* ------------------------ INTRO ------------------------ */
 
-					<div className="mt-8 flex flex-wrap gap-4">
-						<PrimaryButton href="http://localhost:3000/contact">
-							Tell us about your project
-						</PrimaryButton>
-						<SecondaryButton href="http://localhost:3000/contact">
-							Ask which service is right
-						</SecondaryButton>
-					</div>
-				</div>
-			</section>
+function IntroSection() {
+	return (
+		<section className="border-b border-neutral-800">
+			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+				<motion.div
+					className="max-w-3xl space-y-4"
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7 }}
+				>
+					<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-soft-white/60">
+						Services
+					</p>
+					<h1 className="font-[var(--font-playfair)] text-3xl md:text-4xl">
+						Design, prep, and operations for homes that feel quietly
+						expensive.
+					</h1>
+					<p className="text-sm text-psr-soft-white/70">
+						Phoenix Street Realty blends interior design, rental
+						preparation, and landlord support into one modern house.
+						Start with a single room, a single unit, or a single
+						decision—and grow into a full portfolio standard.
+					</p>
+				</motion.div>
 
-			{/* Service cards */}
-			<section className="border-b border-slate-900/70 bg-psr-ink-soft/40">
-				<div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-					<div className="grid gap-6 md:grid-cols-2">
-						{services.map((service) => (
-							<article
-								key={service.id}
-								id={service.id}
-								className="flex flex-col rounded-3xl border border-slate-800 bg-psr-ink-soft/80 p-6 shadow-md shadow-black/30"
-							>
-								<p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-psr-gold/80">
-									{service.name}
+				<motion.div
+					className="mt-8 flex flex-wrap gap-4"
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.6, delay: 0.1 }}
+				>
+					<PrimaryButton href="/contact">
+						Tell us about your property
+					</PrimaryButton>
+					<SecondaryButton href="/contact">
+						Ask which service fits
+					</SecondaryButton>
+				</motion.div>
+			</div>
+		</section>
+	);
+}
+
+/* --------------------- SERVICE GRID --------------------- */
+
+function ServiceGridSection() {
+	return (
+		<section className="border-b border-neutral-800">
+			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+				<motion.div
+					className="grid gap-6 md:grid-cols-2"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.2 }}
+					variants={{
+						hidden: { opacity: 0, y: 40 },
+						visible: {
+							opacity: 1,
+							y: 0,
+							transition: {
+								staggerChildren: 0.12,
+								duration: 0.6,
+							},
+						},
+					}}
+				>
+					{services.map((service) => (
+						<motion.article
+							key={service.id}
+							id={service.id}
+							className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-gradient-to-b from-black/85 via-neutral-900/80 to-psr-charcoal p-6 shadow-card-soft/40"
+							variants={{
+								hidden: { opacity: 0, y: 30 },
+								visible: { opacity: 1, y: 0 },
+							}}
+						>
+							<div>
+								<p className="text-[0.6rem] uppercase tracking-[0.3em] text-psr-gold/85">
+									{service.label}
 								</p>
-								<h2 className="mt-3 text-lg font-semibold text-slate-50">
-									{service.tagline}
+								<h2 className="mt-2 font-[var(--font-playfair)] text-sm font-semibold text-psr-ivory">
+									{service.name}
 								</h2>
+								<p className="mt-2 text-[0.8rem] text-psr-soft-white/75">
+									{service.tagline}
+								</p>
 
-								<div className="mt-4 space-y-3 text-xs text-slate-300">
+								<div className="mt-4 grid gap-3 text-[0.8rem] md:grid-cols-2">
 									<div>
-										<p className="font-semibold text-slate-100">
+										<p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-psr-soft-white/55">
 											Ideal for
 										</p>
-										<ul className="mt-1 space-y-1">
+										<ul className="mt-1 space-y-1 text-psr-soft-white/85">
 											{service.idealFor.map((item) => (
 												<li key={item}>• {item}</li>
 											))}
 										</ul>
 									</div>
 									<div>
-										<p className="font-semibold text-slate-100">
-											What is included
+										<p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-psr-soft-white/55">
+											Includes
 										</p>
-										<ul className="mt-1 space-y-1">
+										<ul className="mt-1 space-y-1 text-psr-soft-white/85">
 											{service.includes.map((item) => (
 												<li key={item}>• {item}</li>
 											))}
 										</ul>
 									</div>
 								</div>
+							</div>
 
-								<div className="mt-6 flex items-center justify-between text-xs text-slate-400">
-									<p>{service.startingAt}</p>
-									<SecondaryButton
-										href="http://localhost:3000/contact"
-										className="px-4 py-2"
-									>
-										Inquire about this
-									</SecondaryButton>
-								</div>
-							</article>
-						))}
-					</div>
-				</div>
-			</section>
+							<div className="mt-5 flex items-center justify-between text-[0.75rem] text-psr-soft-white/55">
+								<p className="italic">{service.note}</p>
+								<SecondaryButton
+									href="/contact"
+									className="px-4 py-2"
+								>
+									Inquire
+								</SecondaryButton>
+							</div>
+						</motion.article>
+					))}
+				</motion.div>
+			</div>
+		</section>
+	);
+}
 
-			{/* FAQ */}
-			<section className="border-b border-slate-900/70">
-				<div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-					<div className="max-w-3xl space-y-4">
-						<p className="text-xs font-semibold uppercase tracking-[0.3em] text-psr-gold/80">
-							FAQ
-						</p>
-						<h2 className="text-2xl font-semibold md:text-3xl">
-							Questions about where to start.
-						</h2>
-						<p className="text-sm text-slate-300">
-							If you are unsure which service fits best, that is
-							okay. Use these answers as a starting point and then
-							reach out with your specific situation.
-						</p>
-					</div>
+/* ------------------------ PROCESS ----------------------- */
 
-					<div className="mt-8 space-y-4">
-						{faqs.map((faq) => (
-							<details
-								key={faq.question}
-								className="group rounded-2xl border border-slate-800 bg-psr-ink-soft/80 p-4"
-							>
-								<summary className="flex cursor-pointer list-none items-center justify-between gap-2 text-sm text-slate-100">
-									<span>{faq.question}</span>
-									<span className="text-xs text-slate-400 group-open:hidden">
-										+
-									</span>
-									<span className="hidden text-xs text-slate-400 group-open:inline">
-										−
-									</span>
-								</summary>
-								<p className="mt-2 text-xs text-slate-300">
-									{faq.answer}
-								</p>
-							</details>
-						))}
-					</div>
-				</div>
-			</section>
-		</main>
+function ProcessSection() {
+	return (
+		<section className="border-b border-neutral-800 bg-psr-ivory text-psr-charcoal">
+			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+				<motion.div
+					className="mb-8 max-w-2xl space-y-3"
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.6 }}
+				>
+					<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-ember/80">
+						Process
+					</p>
+					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl">
+						Quiet, structured, and tailored to your level of
+						involvement.
+					</h2>
+					<p className="text-sm text-neutral-800/85">
+						Whether you are hands-on or prefer a more private,
+						advisory relationship, our process is designed to keep
+						decisions clear, timelines realistic, and outcomes
+						grounded in both design and performance.
+					</p>
+				</motion.div>
+
+				<motion.div
+					className="grid gap-4 md:grid-cols-4"
+					initial={{ opacity: 0, y: 40 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.7 }}
+				>
+					{processSteps.map((step) => (
+						<div
+							key={step.title}
+							className="space-y-2 border border-neutral-300/80 bg-psr-soft-white/60 p-4 text-[0.8rem]"
+						>
+							<p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-neutral-800">
+								{step.title}
+							</p>
+							<p className="text-neutral-700">{step.body}</p>
+						</div>
+					))}
+				</motion.div>
+			</div>
+		</section>
+	);
+}
+
+/* -------------------------- FAQ ------------------------- */
+
+function FaqSection() {
+	return (
+		<section className="border-b border-neutral-800">
+			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+				<motion.div
+					className="max-w-2xl space-y-3"
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.6 }}
+				>
+					<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-soft-white/60">
+						FAQ
+					</p>
+					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl">
+						Questions before you book a call.
+					</h2>
+					<p className="text-sm text-psr-soft-white/70">
+						If you are between services or curious how we might
+						partner across design and investing, these are a few of
+						the conversations that come up most often.
+					</p>
+				</motion.div>
+
+				<motion.div
+					className="mt-8 space-y-3"
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.7, delay: 0.05 }}
+				>
+					{faqs.map((item) => (
+						<details
+							key={item.q}
+							className="group rounded-2xl border border-neutral-800 bg-black/40 p-4 text-[0.85rem]"
+						>
+							<summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-psr-soft-white">
+								<span>{item.q}</span>
+								<span className="text-xs text-psr-soft-white/50 group-open:hidden">
+									+
+								</span>
+								<span className="hidden text-xs text-psr-soft-white/50 group-open:inline">
+									−
+								</span>
+							</summary>
+							<p className="mt-2 text-psr-soft-white/70">
+								{item.a}
+							</p>
+						</details>
+					))}
+				</motion.div>
+
+				<motion.div
+					className="mt-8"
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.2 }}
+					transition={{ duration: 0.6 }}
+				>
+					<SecondaryButton href="/contact">
+						Ask a specific question
+					</SecondaryButton>
+				</motion.div>
+			</div>
+		</section>
 	);
 }

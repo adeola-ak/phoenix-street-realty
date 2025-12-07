@@ -1,516 +1,609 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { PrimaryButton, SecondaryButton } from "@/components/ui/PrimaryButton";
 
 export default function Home() {
 	return (
-		<main className="bg-psr-ink text-slate-50">
+		<main className="bg-psr-charcoal text-psr-soft-white">
 			<HeroSection />
-			<ValuePillarsSection />
-			<AudienceSection />
+			<ServicesTeaserSection />
+			<BrandStatementSection />
+			<AudienceStripSection />
 			<PortfolioTeaserSection />
 			<VisionSection />
-			<BlogTeaserSection />
+			<JournalTeaserSection />
 			<FinalCtaSection />
 		</main>
 	);
 }
 
-function SectionWrapper({ children }: { children: React.ReactNode }) {
-	return (
-		<section className="border-b border-slate-900/70">
-			<div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-				{children}
-			</div>
-		</section>
-	);
-}
+/* ------------------------- HERO ------------------------- */
 
 function HeroSection() {
 	return (
-		<section className="border-b border-slate-900/70 bg-gradient-to-b from-psr-ink to-psr-ink-soft">
-			<div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 py-20 md:flex-row md:items-center lg:py-28">
-				{/* Left side: text */}
-				<div className="flex-1 space-y-6">
-					<p className="text-xs font-semibold uppercase tracking-[0.3em] text-psr-gold/80">
-						Modern real estate & interior design
-					</p>
-					<h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-						Design-driven real estate{" "}
-						<span className="block text-psr-gold">
-							for modern living.
+		<section className="border-b border-neutral-800">
+			<div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-24 md:flex-row md:items-center lg:gap-20">
+				{/* Left: copy */}
+				<div className="flex-1 space-y-8">
+					<motion.p
+						className="text-[0.6rem] tracking-[0.35em] uppercase text-psr-soft-white/60"
+						initial={{ opacity: 0, y: -10 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.5 }}
+					>
+						Phoenix Street Realty
+					</motion.p>
+
+					<motion.h1
+						className="font-[var(--font-playfair)] text-4xl leading-tight md:text-5xl lg:text-[3.5rem] text-psr-ivory"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.7, delay: 0.1 }}
+					>
+						Luxury real estate
+						<span className="block text-psr-soft-white/90">
+							with a designer’s point of view.
 						</span>
-					</h1>
-					<p className="max-w-xl text-sm text-slate-300 md:text-base">
-						Phoenix Street Realty blends rental property management,
-						interior design consulting, and real estate investment
-						strategy to make every home feel elevated, functional,
-						and market-ready.
-					</p>
+					</motion.h1>
 
-					<div className="flex flex-wrap gap-4 pt-2">
-						<PrimaryButton href="http://localhost:3000/contact">
-							Book a design consult
+					<motion.p
+						className="max-w-xl text-sm text-psr-soft-white/70"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.7, delay: 0.2 }}
+					>
+						A high-end private real estate and home-design house
+						blending quiet wealth, modern architectural minimalism,
+						and editorial interiors—for sellers, landlords, and
+						investors who treat home as a lifestyle asset.
+					</motion.p>
+
+					<motion.div
+						className="flex flex-wrap gap-4 pt-4"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.7, delay: 0.3 }}
+					>
+						<PrimaryButton href="/contact">
+							Book a private consult
 						</PrimaryButton>
-						<SecondaryButton href="http://localhost:3000/services">
-							Landlord services
+						<SecondaryButton href="/portfolio">
+							View our work
 						</SecondaryButton>
-					</div>
+					</motion.div>
 
-					<div className="flex flex-wrap gap-6 pt-6 text-xs text-slate-400">
+					<motion.div
+						className="mt-6 flex flex-wrap gap-8 text-[0.7rem] text-psr-soft-white/55"
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.7, delay: 0.4 }}
+					>
 						<div>
-							<p className="text-sm font-semibold text-psr-gold">
-								Multi-service
+							<p className="font-semibold text-psr-soft-white">
+								Quiet wealth
 							</p>
 							<p>
-								Design, rental prep, and landlord support in one
-								brand.
+								Design, operations, and returns with restraint.
 							</p>
 						</div>
 						<div>
-							<p className="text-sm font-semibold text-psr-gold">
-								Built to scale
+							<p className="font-semibold text-psr-soft-white">
+								For visionaries
 							</p>
 							<p>
-								Growing a portfolio of elevated, high-performing
-								properties.
+								Sellers, landlords, and investors with a point
+								of view.
 							</p>
 						</div>
-					</div>
+					</motion.div>
 				</div>
 
-				{/* Right side: "visual" */}
-				<div className="flex-1">
+				{/* Right: cinematic “hero card” */}
+				<motion.div
+					className="flex-1"
+					initial={{ opacity: 0, x: 30 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{ duration: 0.8, delay: 0.25 }}
+				>
 					<div className="relative mx-auto max-w-md">
-						<div className="aspect-[4/5] w-full rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl shadow-black/50" />
-						<div className="absolute -bottom-6 left-6 flex gap-4 rounded-2xl border border-slate-800 bg-psr-ink-soft/90 px-4 py-3 text-xs text-slate-200 backdrop-blur">
-							<div>
-								<p className="text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-									Occupancy
-								</p>
-								<p className="text-lg font-semibold">92%</p>
+						<div className="rounded-2xl border border-psr-soft-white/10 bg-gradient-to-b from-black via-psr-charcoal-soft to-black p-3 shadow-card-soft">
+							<div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-[radial-gradient(circle_at_top,_#1a1a1a,_#050505)]">
+								<div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/40" />
+								<div className="absolute right-6 top-10 h-40 w-px bg-psr-gold/70" />
+								<div className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-psr-charcoal via-transparent" />
 							</div>
-							<div>
-								<p className="text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-									Styled spaces
-								</p>
-								<p className="text-lg font-semibold">10+</p>
-							</div>
-							<div>
-								<p className="text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-									Virtual consults
-								</p>
-								<p className="text-lg font-semibold">
-									Available
-								</p>
+						</div>
+
+						<div className="pointer-events-none absolute -bottom-8 left-6 rounded-2xl border border-psr-soft-white/10 bg-psr-charcoal/90 px-4 py-3 text-[0.7rem] text-psr-soft-white/80 backdrop-blur">
+							<div className="flex gap-6">
+								<div>
+									<p className="text-[0.6rem] uppercase tracking-[0.3em] text-psr-soft-white/40">
+										design-led rentals
+									</p>
+									<p className="mt-1 text-sm font-semibold text-psr-soft-white">
+										90%+
+									</p>
+									<p className="text-[0.65rem] text-psr-soft-white/50">
+										occupancy across stages
+									</p>
+								</div>
+								<div>
+									<p className="text-[0.6rem] uppercase tracking-[0.3em] text-psr-soft-white/40">
+										portfolio vision
+									</p>
+									<p className="mt-1 text-sm font-semibold text-psr-soft-white">
+										design × returns
+									</p>
+									<p className="text-[0.65rem] text-psr-soft-white/50">
+										homes as lifestyle assets
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);
 }
 
-function ValuePillarsSection() {
-	const pillars = [
-		{
-			title: "Virtual interior design consults",
-			description:
-				"Work room-by-room or space-by-space with a design partner to refine layouts, palettes, and finishes—no matter where you are.",
-			bullets: [
-				"Room refreshes",
-				"Furniture & decor selection",
-				"Color & materials guidance",
-			],
-		},
-		{
-			title: "Rental-ready property prep",
-			description:
-				"Get a tailored checklist and design-forward recommendations to make your rental feel premium, durable, and move-in ready.",
-			bullets: [
-				"Rent-ready assessments",
-				"Layout & lighting tweaks",
-				"Photo-ready styling tips",
-			],
-		},
-		{
-			title: "Home styling & staging advice",
-			description:
-				"Elevate how your property photographs and feels, with styling guidance focused on selling faster and standing out.",
-			bullets: [
-				"Seller staging guidance",
-				"Listing photo styling",
-				"Short-term rental styling",
-			],
-		},
-		{
-			title: "Landlord support services",
-			description:
-				"Calm, structured support for modern landlords—from screening tenants to structured move-in/move-out processes.",
-			bullets: [
-				"Tenant screening support",
-				"Move-in/out checklists",
-				"Ongoing property guidance",
-			],
-		},
-	];
+/* ----------------- “WHAT WE DO RIGHT NOW” ---------------- */
 
+const servicesTeaser = [
+	{
+		label: "Virtual",
+		title: "Interior Design Consults",
+		body: "Room-by-room guidance on layout, palette, and pieces—delivered privately over video.",
+	},
+	{
+		label: "Rental ready",
+		title: "Property Prep",
+		body: "Rent-ready plans, finishes, and photographs so rentals feel considered, not improvised.",
+	},
+	{
+		label: "Landlord",
+		title: "Support & Guides",
+		body: "Frameworks, checklists, and systems for calm, design-conscious landlords.",
+	},
+];
+
+function ServicesTeaserSection() {
 	return (
-		<SectionWrapper>
-			<div className="space-y-10">
-				<div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-					<div>
-						<p className="text-xs font-semibold uppercase tracking-[0.3em] text-psr-gold/90">
-							Services
-						</p>
-						<h2 className="mt-2 text-2xl font-semibold md:text-3xl">
-							A design-first approach to real estate services.
-						</h2>
-					</div>
-					<p className="max-w-md text-sm text-slate-300">
-						From virtual consults to rent-ready checklists, Phoenix
-						Street Realty helps you make confident decisions about
-						your space and your portfolio.
+		<section className="border-b border-neutral-800 bg-psr-charcoal">
+			<div className="mx-auto max-w-6xl px-6 pb-16 pt-6 md:pb-20 md:pt-10">
+				<motion.div
+					className="mb-10 space-y-2"
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.5 }}
+					transition={{ duration: 0.7 }}
+				>
+					<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-soft-white/60">
+						Our core services.
 					</p>
-				</div>
-
-				<div className="grid gap-6 md:grid-cols-2">
-					{pillars.map((pillar) => (
-						<div
-							key={pillar.title}
-							className="group flex flex-col rounded-3xl border border-slate-800/80 bg-psr-ink-soft/80 p-6 shadow-sm shadow-black/20 transition hover:border-psr-gold/70 hover:shadow-lg"
-						>
-							<h3 className="text-lg font-semibold text-slate-50">
-								{pillar.title}
-							</h3>
-							<p className="mt-3 text-sm text-slate-300">
-								{pillar.description}
-							</p>
-							<ul className="mt-4 space-y-1 text-xs text-slate-400">
-								{pillar.bullets.map((b) => (
-									<li key={b}>• {b}</li>
-								))}
-							</ul>
-							<a
-								href="http://localhost:3000/services"
-								className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-psr-gold/80 group-hover:text-psr-gold"
-							>
-								Learn more →
-							</a>
-						</div>
-					))}
-				</div>
-			</div>
-		</SectionWrapper>
-	);
-}
-
-function AudienceSection() {
-	const audiences = [
-		{
-			label: "Homeowners",
-			text: "Preparing to sell, refresh, or renovate your home with a design-led partner.",
-		},
-		{
-			label: "Landlords",
-			text: "Need a trusted, detail-oriented team to help keep rentals efficient and elevated.",
-		},
-		{
-			label: "Design clients",
-			text: "Want virtual styling support to refine spaces, finishes, and furniture choices.",
-		},
-		{
-			label: "Investors & partners",
-			text: "Looking to co-create value through acquisitions, renovations, and long-term holds.",
-		},
-	];
-
-	return (
-		<SectionWrapper>
-			<div className="space-y-8">
-				<div className="max-w-xl space-y-3">
-					<p className="text-xs font-semibold uppercase tracking-[0.3em] text-psr-gold/80">
-						Who we serve
-					</p>
-					<h2 className="text-2xl font-semibold md:text-3xl">
-						Built for homeowners, landlords, and design-driven
-						investors.
+					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl text-psr-ivory">
+						Design-forward services for sellers, landlords, and
+						modern owners.
 					</h2>
-					<p className="text-sm text-slate-300">
-						Phoenix Street Realty sits at the intersection of real
-						estate operations and interior design. We help you think
-						about both the numbers and the feeling of home.
+					<p className="max-w-xl text-[0.85rem] text-psr-soft-white/70 leading-relaxed">
+						A selection of services designed to elevate rentals,
+						refine interiors, and prepare both homes and landlords
+						for their next chapter.
 					</p>
-				</div>
+				</motion.div>
 
-				<div className="grid gap-4 md:grid-cols-4">
-					{audiences.map((audience) => (
-						<div
-							key={audience.label}
-							className="flex flex-col rounded-2xl border border-slate-800 bg-psr-ink-soft/80 p-4 text-sm"
+				<motion.div
+					className="grid gap-6 md:grid-cols-3"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.25 }}
+					variants={{
+						hidden: { opacity: 0, y: 32 },
+						visible: {
+							opacity: 1,
+							y: 0,
+							transition: { duration: 0.6, staggerChildren: 0.1 },
+						},
+					}}
+				>
+					{servicesTeaser.map((service) => (
+						<motion.div
+							key={service.title}
+							className="flex flex-col justify-between rounded-2xl border border-psr-gold/40 bg-psr-charcoal-soft/60 px-6 py-6 shadow-card-soft/40"
+							variants={{
+								hidden: { opacity: 0, y: 24 },
+								visible: { opacity: 1, y: 0 },
+							}}
 						>
-							<p className="text-xs font-semibold uppercase tracking-[0.2em] text-psr-gold/80">
-								{audience.label}
+							<div>
+								<p className="text-[0.6rem] uppercase tracking-[0.3em] text-psr-gold/85">
+									{service.label}
+								</p>
+								<h3 className="mt-3 font-[var(--font-playfair)] text-sm font-medium text-psr-ivory">
+									{service.title}
+								</h3>
+								<p className="mt-3 text-[0.8rem] text-psr-soft-white/75">
+									{service.body}
+								</p>
+							</div>
+							<div className="mt-5 text-[0.75rem] text-psr-soft-white/60">
+								<a
+									href="/services"
+									className="border-b border-transparent pb-[2px] text-psr-gold hover:border-psr-gold"
+								>
+									View all services →
+								</a>
+							</div>
+						</motion.div>
+					))}
+				</motion.div>
+			</div>
+		</section>
+	);
+}
+
+/* --------------------- BRAND STATEMENT --------------------- */
+
+function BrandStatementSection() {
+	return (
+		<section className="border-b border-neutral-800 bg-psr-ivory text-psr-charcoal">
+			<div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.3fr,1fr] md:py-20">
+				<motion.div
+					className="space-y-4"
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7 }}
+				>
+					<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-ember/80">
+						A private real estate & design house
+					</p>
+					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl">
+						Real estate, interior design, and portfolio strategy
+						under one roof.
+					</h2>
+				</motion.div>
+				<motion.div
+					className="space-y-3 text-sm text-neutral-800/80"
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7, delay: 0.05 }}
+				>
+					<p>
+						Phoenix Street Realty operates at the intersection of
+						real estate investing and high-end interior design.
+						Rentals, renovations, and listings are treated as
+						long-term assets—not one-off transactions.
+					</p>
+					<p>
+						From virtual interior consults and rent-ready prep to
+						portfolio conversations, we help sellers, landlords, and
+						design-minded investors make decisions that look as good
+						as they perform.
+					</p>
+				</motion.div>
+			</div>
+		</section>
+	);
+}
+
+/* --------------------- AUDIENCE STRIP --------------------- */
+
+const audiences = [
+	{
+		label: "Sellers",
+		text: "Preparing a home to hit the market quietly and beautifully.",
+	},
+	{
+		label: "Landlords",
+		text: "Design-led rentals that stay desirable and rent-ready.",
+	},
+	{
+		label: "Design clients",
+		text: "Virtual styling and space planning with a clear point of view.",
+	},
+	{
+		label: "Investors",
+		text: "Acquisitions, renovations, and holds with design at the core.",
+	},
+];
+
+function AudienceStripSection() {
+	return (
+		<section className="border-b border-neutral-800 bg-psr-charcoal">
+			<div className="mx-auto max-w-6xl px-6 py-10">
+				<motion.div
+					className="grid gap-6 border border-neutral-800/90 bg-black/40 px-4 py-6 text-[0.8rem] md:grid-cols-4 md:px-6"
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7 }}
+				>
+					{audiences.map((item, i) => (
+						<div
+							key={item.label}
+							className={`space-y-2 ${
+								i !== audiences.length - 1
+									? "border-b border-neutral-800 pb-4 md:border-b-0 md:border-r md:pb-0 md:pr-4"
+									: ""
+							}`}
+						>
+							<p className="text-[0.6rem] uppercase tracking-[0.25em] text-psr-soft-white/60">
+								{item.label}
 							</p>
-							<p className="mt-2 text-xs text-slate-300">
-								{audience.text}
+							<p className="text-psr-soft-white/75">
+								{item.text}
 							</p>
 						</div>
 					))}
-				</div>
+				</motion.div>
 			</div>
-		</SectionWrapper>
+		</section>
 	);
 }
+
+/* --------------------- PORTFOLIO TEASER --------------------- */
+
+const portfolioItems = [
+	{
+		tag: "Rental refresh",
+		title: "Downtown loft, off-market rental prep",
+		copy: "A moody living space reworked for long-term tenants and editorial-level photos.",
+	},
+	{
+		tag: "Seller staging",
+		title: "Townhouse, quiet-listing styling direction",
+		copy: "Soft staging layers that photographed like a spread and showed like a home.",
+	},
+	{
+		tag: "Virtual design",
+		title: "City apartment, remote living room redesign",
+		copy: "A full furniture and palette overhaul guided entirely over video.",
+	},
+];
 
 function PortfolioTeaserSection() {
-	const projects = [
-		{
-			title: "Downtown rental refresh",
-			subtitle: "2-bed city apartment",
-			tag: "Rental-ready prep",
-			result: "Listed 3 days after completion",
-		},
-		{
-			title: "Townhome staging concept",
-			subtitle: "Seller-focused styling",
-			tag: "Staging & styling",
-			result: "Photography-first layout planning",
-		},
-		{
-			title: "Virtual living room redesign",
-			subtitle: "Remote design consult",
-			tag: "Virtual design",
-			result: "Guided furniture & palette updates",
-		},
-	];
-
 	return (
-		<SectionWrapper>
-			<div className="space-y-8">
-				<div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+		<section className="border-b border-neutral-800 bg-psr-charcoal">
+			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+				<motion.div
+					className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7 }}
+				>
 					<div>
-						<p className="text-xs font-semibold uppercase tracking-[0.3em] text-psr-gold/80">
-							Transformations
+						<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-soft-white/50">
+							Portfolio
 						</p>
-						<h2 className="mt-2 text-2xl font-semibold md:text-3xl">
-							Spaces that feel intentional, calm, and
-							market-ready.
+						<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl text-psr-ivory">
+							Spaces with a story.
 						</h2>
 					</div>
 					<a
-						href="http://localhost:3000/portfolio"
-						className="text-xs font-semibold uppercase tracking-[0.2em] text-psr-gold/80 hover:text-psr-gold"
+						href="/portfolio"
+						className="text-[0.7rem] tracking-[0.25em] uppercase text-psr-gold"
 					>
-						View portfolio →
+						Explore the portfolio →
 					</a>
-				</div>
+				</motion.div>
 
-				<div className="grid gap-6 md:grid-cols-3">
-					{projects.map((project) => (
-						<div
-							key={project.title}
-							className="flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-psr-ink-soft/90 shadow-md shadow-black/40"
+				<motion.div
+					className="grid gap-6 md:grid-cols-3"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.25 }}
+					variants={{
+						hidden: { opacity: 0, y: 32 },
+						visible: {
+							opacity: 1,
+							y: 0,
+							transition: {
+								duration: 0.6,
+								staggerChildren: 0.12,
+							},
+						},
+					}}
+				>
+					{portfolioItems.map((item) => (
+						<motion.div
+							key={item.title}
+							className="flex flex-col overflow-hidden rounded-2xl border border-neutral-800 bg-gradient-to-b from-psr-charcoal-soft via-[#050505] to-psr-charcoal shadow-card-soft/40"
+							variants={{
+								hidden: { opacity: 0, y: 24 },
+								visible: { opacity: 1, y: 0 },
+							}}
 						>
-							<div className="aspect-[4/3] w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
-							<div className="space-y-2 p-5">
-								<p className="inline-flex rounded-full bg-slate-900 px-3 py-1 text-[0.65rem] uppercase tracking-[0.2em] text-slate-300">
-									{project.tag}
+							{/* image / placeholder */}
+							<div className="aspect-[4/3] w-full bg-gradient-to-br from-black/80 via-psr-charcoal-soft to-psr-charcoal" />
+
+							{/* text area */}
+							<div className="space-y-2 bg-gradient-to-t from-black/80 via-psr-charcoal-soft/85 to-transparent p-5 text-[0.8rem]">
+								<p className="text-[0.6rem] uppercase tracking-[0.25em] text-psr-soft-white/60">
+									{item.tag}
 								</p>
-								<h3 className="text-sm font-semibold text-slate-50">
-									{project.title}
-								</h3>
-								<p className="text-xs text-slate-400">
-									{project.subtitle}
+								<p className="font-[var(--font-playfair)] text-psr-ivory">
+									{item.title}
 								</p>
-								<p className="mt-2 text-xs text-psr-gold/90">
-									{project.result}
+								<p className="text-psr-soft-white/70">
+									{item.copy}
 								</p>
 							</div>
-						</div>
+						</motion.div>
 					))}
-				</div>
+				</motion.div>
 			</div>
-		</SectionWrapper>
+		</section>
 	);
 }
 
+/* --------------------- VISION / INVESTMENT --------------------- */
+
+const visionSteps = [
+	{
+		title: "Acquire",
+		body: "Identify properties with strong bones, light, and layout potential.",
+	},
+	{
+		title: "Renovate",
+		body: "Apply a design lens that balances durability, comfort, and aesthetics.",
+	},
+	{
+		title: "Design & stage",
+		body: "Style spaces to live beautifully and photograph like an editorial.",
+	},
+	{
+		title: "Hold or flip",
+		body: "Decide whether the home belongs in a long-term portfolio or on the market.",
+	},
+];
+
 function VisionSection() {
-	const steps = [
-		{
-			title: "Acquire",
-			text: "Identify properties with strong fundamentals and design potential.",
-		},
-		{
-			title: "Renovate",
-			text: "Thoughtful updates that balance durability, comfort, and aesthetics.",
-		},
-		{
-			title: "Design & stage",
-			text: "Layer styling and layout decisions that photograph and live beautifully.",
-		},
-		{
-			title: "Hold or flip",
-			text: "Refined homes to rent, hold, or sell—depending on your strategy.",
-		},
-	];
-
 	return (
-		<SectionWrapper>
-			<div className="grid gap-10 md:grid-cols-2 md:items-start">
-				<div className="space-y-4">
-					<p className="text-xs font-semibold uppercase tracking-[0.3em] text-psr-gold/80">
-						Long-term vision
+		<section className="border-b border-neutral-800 bg-psr-ivory text-psr-charcoal">
+			<div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2 md:py-20">
+				<motion.div
+					className="space-y-4"
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7 }}
+				>
+					<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-ember/80">
+						Investment focus
 					</p>
-					<h2 className="text-2xl font-semibold md:text-3xl">
-						A design-first portfolio of elevated rentals and
-						renovations.
+					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl">
+						where design and returns speak the same language.
 					</h2>
-					<p className="text-sm text-slate-300">
-						Phoenix Street Realty is growing from multi-service real
-						estate operations into a curated portfolio of
-						homes—acquisitions, renovations, and flips that feel
-						grounded, modern, and deeply livable.
+					<p className="text-sm text-neutral-800/85">
+						Phoenix Street Realty is building a design-led
+						portfolio: acquisitions, renovations, and rentals that
+						feel as good to live in as they look online. Less
+						volume, more intention.
 					</p>
-					<p className="text-sm text-slate-300">
-						We partner with homeowners, landlords, and future
-						investors who care about both returns and the experience
-						of home.
-					</p>
-				</div>
-
-				<div className="space-y-4 rounded-3xl border border-slate-800 bg-psr-ink-soft/80 p-6">
-					{steps.map((step, index) => (
-						<div key={step.title} className="flex gap-4">
-							<div className="mt-1 flex h-7 w-7 items-center justify-center rounded-full border border-psr-gold/60 text-xs font-semibold text-psr-gold">
+				</motion.div>
+				<motion.div
+					className="space-y-4 rounded-2xl border border-neutral-300/80 bg-psr-soft-white/70 p-5 text-sm text-neutral-900"
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7, delay: 0.05 }}
+				>
+					{visionSteps.map((step, index) => (
+						<div
+							key={step.title}
+							className="flex gap-4 border-b border-neutral-300/60 pb-4 last:border-b-0 last:pb-0"
+						>
+							<div className="mt-1 flex h-7 w-7 items-center justify-center rounded-full border border-psr-gold text-[0.7rem] font-semibold text-psr-gold">
 								{index + 1}
 							</div>
 							<div>
-								<p className="text-sm font-semibold text-slate-50">
-									{step.title}
-								</p>
-								<p className="text-xs text-slate-400">
-									{step.text}
+								<p className="font-semibold">{step.title}</p>
+								<p className="text-[0.8rem] text-neutral-700">
+									{step.body}
 								</p>
 							</div>
 						</div>
 					))}
-				</div>
+				</motion.div>
 			</div>
-		</SectionWrapper>
+		</section>
 	);
 }
 
-function BlogTeaserSection() {
-	const posts = [
-		{
-			title: "5 design tweaks that make rentals feel instantly premium",
-			category: "Interior design",
-			excerpt:
-				"Small, intentional updates can dramatically change how a rental photographs and lives.",
-		},
-		{
-			title: "The calm landlord: systems for move-ins, move-outs, and rent-ready units",
-			category: "Landlord tips",
-			excerpt:
-				"Checklists and simple workflows help you protect your time, property, and tenants.",
-		},
-		{
-			title: "Design-minded real estate investing 101",
-			category: "Investing",
-			excerpt:
-				"Why finishes, layouts, and styling matter just as much as cap rates and comps.",
-		},
-	];
+/* --------------------- JOURNAL TEASER --------------------- */
 
+function JournalTeaserSection() {
 	return (
-		<SectionWrapper>
-			<div className="space-y-8">
-				<div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+		<section className="border-b border-neutral-800 bg-psr-charcoal">
+			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+				<motion.div
+					className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7 }}
+				>
 					<div>
-						<p className="text-xs font-semibold uppercase tracking-[0.3em] text-psr-gold/80">
-							Resources
+						<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-soft-white/50">
+							Journal
 						</p>
-						<h2 className="mt-2 text-2xl font-semibold md:text-3xl">
-							Design, operations, and investing—decoded.
+						<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl text-psr-ivory">
+							Thoughts from inside the house.
 						</h2>
 					</div>
 					<a
-						href="http://localhost:3000/blog"
-						className="text-xs font-semibold uppercase tracking-[0.2em] text-psr-gold/80 hover:text-psr-gold"
+						href="/blog"
+						className="text-[0.7rem] tracking-[0.25em] uppercase text-psr-gold"
 					>
-						Visit the blog →
+						Read the journal →
 					</a>
-				</div>
-
-				<div className="grid gap-6 md:grid-cols-3">
-					{posts.map((post) => (
-						<article
-							key={post.title}
-							className="flex flex-col rounded-2xl border border-slate-800 bg-psr-ink-soft/80 p-5"
-						>
-							<p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-psr-gold/80">
-								{post.category}
-							</p>
-							<h3 className="mt-3 text-sm font-semibold text-slate-50">
-								{post.title}
-							</h3>
-							<p className="mt-2 text-xs text-slate-400">
-								{post.excerpt}
-							</p>
-							<a
-								href="http://localhost:3000/blog"
-								className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-psr-gold/80"
-							>
-								Read article →
-							</a>
-						</article>
-					))}
-				</div>
+				</motion.div>
+				<motion.p
+					className="max-w-xl text-[0.8rem] text-psr-soft-white/70"
+					initial={{ opacity: 0, y: 16 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.6 }}
+				>
+					Design tricks for rentals, calm-landlord systems, and
+					design-minded investing—short, sharp, and written for people
+					who are serious about the spaces they own.
+				</motion.p>
 			</div>
-		</SectionWrapper>
+		</section>
 	);
 }
 
+/* --------------------- FINAL CTA --------------------- */
+
 function FinalCtaSection() {
 	return (
-		<section className="bg-psr-sand text-slate-900">
+		<section className="bg-psr-ivory text-psr-charcoal">
 			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-				<div className="max-w-3xl space-y-4">
-					<p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-500">
-						Next step
+				<motion.div
+					className="max-w-2xl space-y-4"
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7 }}
+				>
+					<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-ember/80">
+						Private inquiry
 					</p>
-					<h2 className="text-2xl font-semibold md:text-3xl">
-						Tell us about your property, your project, or your
-						portfolio.
+					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl">
+						tell us about your property.
 					</h2>
-					<p className="text-sm text-slate-700">
-						Whether you need a virtual design consult, a rent-ready
-						checklist, or a long-term partner for growing a
-						portfolio, Phoenix Street Realty is here to help.
+					<p className="text-sm text-neutral-800/85">
+						For design-led rentals, off-market preparations, or
+						portfolio conversations, share a few details and we will
+						respond personally.
 					</p>
-				</div>
-				<div className="mt-6 flex flex-wrap items-center gap-4">
-					<a
-						href="http://localhost:3000/contact"
-						className="rounded-full bg-slate-900 px-6 py-3
-             text-xs font-semibold uppercase tracking-[0.2em] text-psr-gold
-             transition duration-200
-             hover:bg-slate-800
-             focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900
-             focus-visible:ring-offset-2 focus-visible:ring-offset-psr-sand"
-					>
-						Get in touch
-					</a>
-					<p className="text-xs text-slate-600">
-						Or email us directly at{" "}
+				</motion.div>
+				<motion.div
+					className="mt-6 flex flex-wrap items-center gap-4"
+					initial={{ opacity: 0, y: 16 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.6, delay: 0.05 }}
+				>
+					<PrimaryButton href="/contact">
+						Submit a private inquiry
+					</PrimaryButton>
+					<p className="text-[0.75rem] text-neutral-700">
+						Or email us at{" "}
 						<a
 							href="mailto:hello@phoenixstreetrealty.com"
-							className="font-medium text-slate-900 underline"
+							className="border-b border-neutral-500 pb-[1px]"
 						>
 							hello@phoenixstreetrealty.com
 						</a>
+						.
 					</p>
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);

@@ -1,42 +1,51 @@
 @import "tailwindcss";
 
-/* Light mode defaults */
+/* Base app background + text colors */
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+	/* Dark, warm base */
+	--background: #050505;
+	/* Default foreground for plain text (light, warm) */
+	--foreground: #f3eee3;
 }
 
-/* Connect CSS vars → Tailwind utilities (DO NOT merge into @theme) */
+/* Connect CSS vars → Tailwind utilities */
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
+
+	/* Fonts wired from next/font in layout.tsx */
+	--font-sans: var(--font-inter);
+	--font-serif: var(--font-playfair);
 }
 
-/* PSR brand design tokens — ALL inside one @theme block */
+/* Phoenix Street Realty brand tokens */
 @theme {
-	/* Brand colors */
-	--color-psr-ink: #020617;
-	--color-psr-ink-soft: #0b1120;
-	--color-psr-gold: #fbbf24;
-	--color-psr-sand: #f3f4f6;
+	/* Core brand colors (keep this list tight) */
 
-	/* Extra radius */
+	/* Deep charcoal / nearly black */
+	--color-psr-charcoal: #0b0b0b;
+	/* Slightly softer charcoal for surfaces */
+	--color-psr-charcoal-soft: #141414;
+
+	/* Warm ivory for headings / light sections */
+	--color-psr-ivory: #e8e2d6;
+	/* Softer ivory for body text & subtle surfaces */
+	--color-psr-soft-white: #f3eee3;
+
+	/* Muted, burnished gold accent */
+	--color-psr-gold: #c8a45d;
+
+	/* Phoenix ember red (very restrained) */
+	--color-psr-ember: #8a2720;
+
+	/* Extra radius for luxe cards */
 	--radius-3xl: 1.5rem;
-}
-
-/* Dark mode variables */
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
 }
 
 /* Base body styling */
 body {
 	background: var(--background);
 	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter",
+		sans-serif;
 }

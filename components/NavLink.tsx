@@ -10,24 +10,33 @@ type NavLinkProps = {
 
 export function NavLink({ href, children }: NavLinkProps) {
 	const pathname = usePathname();
-	const isActive = pathname === new URL(href).pathname; // strips domain if you use full URLs
 
-	const baseClasses =
-		"text-sm transition duration-200 focus:outline-none " +
-		"focus-visible:ring-2 focus-visible:ring-psr-gold " +
-		"focus-visible:ring-offset-2 focus-visible:ring-offset-psr-ink";
+	// href should be something like "/", "/services", "/portfolio", etc.
+	// Active if exact match, or if we're on a sub-path of that section
+	const isExactMatch = pathname === href;
+	const isNestedMatch =
+		href !== "/" && pathname.startsWith(href) && pathname !== "/";
 
-	const inactiveClasses = "text-slate-300 hover:text-psr-gold";
-	const activeClasses = "text-psr-gold";
-
-	const className = [
-		baseClasses,
-		isActive ? activeClasses : inactiveClasses,
-	].join(" ");
+	const isActive = isExactMatch || isNestedMatch;
 
 	return (
-		<a href={href} className={className}>
-			{children}
+		<a
+			href={href}
+			className={`relative text-[0.7rem] tracking-[0.28em] uppercase transition-colors duration-300
+        ${
+			isActive
+				? "text-psr-gold"
+				: "text-psr-soft-white/70 hover:text-psr-soft-white"
+		}
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-psr-gold focus-visible:ring-offset-2 focus-visible:ring-offset-psr-charcoal
+      `}
+		>
+			<span>{children}</span>
+			<span
+				className={`pointer-events-none absolute -bottom-1 left-0 h-px w-full bg-psr-gold transition-transform duration-300 origin-left ${
+					isActive ? "scale-x-100" : "scale-x-0"
+				}`}
+			/>
 		</a>
 	);
 }
