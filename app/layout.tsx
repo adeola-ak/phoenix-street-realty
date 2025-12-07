@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import { NavLink } from "@/components/NavLink";
+import { PrimaryButton } from "@/components/ui/PrimaryButton";
+
 export const metadata: Metadata = {
 	title: "Phoenix Street Realty",
 	description:
@@ -35,59 +38,25 @@ function SiteHeader() {
 						Phoenix Street Realty
 					</span>
 				</div>
-				<nav className="hidden gap-8 text-sm text-slate-300 md:flex">
-					<a
-						href="http://localhost:3000"
-						className="transition duration-200 hover:text-psr-gold
-               focus:outline-none focus-visible:ring-2 focus-visible:ring-psr-gold
-               focus-visible:ring-offset-2 focus-visible:ring-offset-psr-ink"
-					>
-						Home
-					</a>
-					<a
-						href="http://localhost:3000/services"
-						className="transition duration-200 hover:text-psr-gold
-               focus:outline-none focus-visible:ring-2 focus-visible:ring-psr-gold
-               focus-visible:ring-offset-2 focus-visible:ring-offset-psr-ink"
-					>
+				<nav className="hidden gap-8 md:flex">
+					<NavLink href="http://localhost:3000">Home</NavLink>
+					<NavLink href="http://localhost:3000/services">
 						Services
-					</a>
-					<a
-						href="http://localhost:3000/portfolio"
-						className="transition duration-200 hover:text-psr-gold
-               focus:outline-none focus-visible:ring-2 focus-visible:ring-psr-gold
-               focus-visible:ring-offset-2 focus-visible:ring-offset-psr-ink"
-					>
+					</NavLink>
+					<NavLink href="http://localhost:3000/portfolio">
 						Portfolio
-					</a>
-					<a
-						href="http://localhost:3000/blog"
-						className="transition duration-200 hover:text-psr-gold
-               focus:outline-none focus-visible:ring-2 focus-visible:ring-psr-gold
-               focus-visible:ring-offset-2 focus-visible:ring-offset-psr-ink"
-					>
-						Blog
-					</a>
-					<a
-						href="http://localhost:3000/contact"
-						className="transition duration-200 hover:text-psr-gold
-               focus:outline-none focus-visible:ring-2 focus-visible:ring-psr-gold
-               focus-visible:ring-offset-2 focus-visible:ring-offset-psr-ink"
-					>
+					</NavLink>
+					<NavLink href="http://localhost:3000/blog">Blog</NavLink>
+					<NavLink href="http://localhost:3000/contact">
 						Contact
-					</a>
+					</NavLink>
 				</nav>
-				<a
+				<PrimaryButton
 					href="http://localhost:3000/contact"
-					className="hidden rounded-full bg-psr-gold px-4 py-2 text-xs font-medium text-slate-900
-             md:inline-flex
-             transition duration-200
-             hover:bg-amber-300
-             focus:outline-none focus-visible:ring-2 focus-visible:ring-psr-gold
-             focus-visible:ring-offset-2 focus-visible:ring-offset-psr-ink"
+					className="hidden px-4 py-2 text-xs font-medium md:inline-flex"
 				>
 					Book a consult
-				</a>
+				</PrimaryButton>
 			</div>
 		</header>
 	);

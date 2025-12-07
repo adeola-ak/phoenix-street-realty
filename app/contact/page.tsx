@@ -1,19 +1,40 @@
 "use client";
 
 import { useState } from "react";
+import { PrimaryButton } from "@/components/ui/PrimaryButton";
+
+const FORM_ENDPOINT = "https://formspree.io/f/xdkqdqyg";
 
 export default function ContactPage() {
-	const [status, setStatus] = useState<"idle" | "submitting" | "submitted">(
-		"idle"
-	);
+	const [status, setStatus] = useState<
+		"idle" | "submitting" | "submitted" | "error"
+	>("idle");
 
-	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		setStatus("submitting");
-		// For now, just simulate a submission:
-		setTimeout(() => {
-			setStatus("submitted");
-		}, 800);
+
+		const form = e.currentTarget;
+		const formData = new FormData(form);
+
+		try {
+			const res = await fetch(FORM_ENDPOINT, {
+				method: "POST",
+				body: formData,
+				headers: {
+					Accept: "application/json",
+				},
+			});
+
+			if (res.ok) {
+				setStatus("submitted");
+				form.reset();
+			} else {
+				setStatus("error");
+			}
+		} catch (err) {
+			setStatus("error");
+		}
 	}
 
 	return (
@@ -24,7 +45,7 @@ export default function ContactPage() {
 						Tell us about your property.
 					</h1>
 					<p className="text-sm text-slate-300">
-						Share a bit about your home, rental, or project. We’ll
+						Share a bit about your home, rental, or project. We will
 						respond with next steps and options for working
 						together.
 					</p>
@@ -116,27 +137,41 @@ export default function ContactPage() {
 						/>
 					</div>
 
-					<button
-						type="submit"
-						disabled={
-							status === "submitting" || status === "submitted"
-						}
-						className="mt-2 rounded-full bg-psr-gold px-6 py-3
-             text-xs font-semibold uppercase tracking-[0.2em] text-slate-900
-             transition duration-200
-             hover:bg-amber-300
-             focus:outline-none focus-visible:ring-2 focus-visible:ring-psr-gold
-             focus-visible:ring-offset-2 focus-visible:ring-offset-psr-ink
-             disabled:opacity-60"
-					>
-						{status === "idle" && "Submit"}
-						{status === "submitting" && "Sending..."}
-						{status === "submitted" && "Submitted ✓"}
-					</button>
+					<div className="mt-2 flex items-center gap-3">
+						<PrimaryButton
+							type="submit"
+							disabled={
+								status === "submitting" ||
+								status === "submitted"
+							}
+							className="disabled:opacity-60"
+						>
+							{status === "idle" && "Submit"}
+							{status === "submitting" && "Sending..."}
+							{status === "submitted" && "Submitted ✓"}
+						</PrimaryButton>
+
+						{status === "error" && (
+							<p className="text-xs text-red-400">
+								Something went wrong. Please try again or email
+								us directly.
+							</p>
+						)}
+						{status === "submitted" && (
+							<p className="text-xs text-emerald-400">
+								Thank you. We have received your message.
+							</p>
+						)}
+					</div>
 
 					<p className="text-xs text-slate-500">
-						For now, this form is a demo. In production, you might
-						connect it to a form service or API endpoint.
+						Or email us at{" "}
+						<a
+							href="mailto:hello@phoenixstreetrealty.com"
+							className="font-medium text-slate-200 underline"
+						>
+							hello@phoenixstreetrealty.com
+						</a>
 					</p>
 				</form>
 			</div>

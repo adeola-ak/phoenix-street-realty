@@ -1,3 +1,5 @@
+import { PrimaryButton, SecondaryButton } from "@/components/ui/PrimaryButton";
+
 export default function Home() {
 	return (
 		<main className="bg-psr-ink text-slate-50">
@@ -45,29 +47,12 @@ function HeroSection() {
 					</p>
 
 					<div className="flex flex-wrap gap-4 pt-2">
-						<a
-							href="http://localhost:3000/contact"
-							className="rounded-full bg-psr-gold px-6 py-3
-               text-xs font-semibold uppercase tracking-[0.2em] text-slate-900
-               shadow-lg shadow-amber-500/40
-               transition duration-200
-               hover:bg-amber-300
-               focus:outline-none focus-visible:ring-2 focus-visible:ring-psr-gold
-               focus-visible:ring-offset-2 focus-visible:ring-offset-psr-ink"
-						>
+						<PrimaryButton href="http://localhost:3000/contact">
 							Book a design consult
-						</a>
-						<a
-							href="http://localhost:3000/services"
-							className="rounded-full border border-slate-700 px-6 py-3
-               text-xs font-semibold uppercase tracking-[0.2em] text-slate-200
-               transition duration-200
-               hover:border-psr-gold hover:text-psr-gold
-               focus:outline-none focus-visible:ring-2 focus-visible:ring-psr-gold
-               focus-visible:ring-offset-2 focus-visible:ring-offset-psr-ink"
-						>
+						</PrimaryButton>
+						<SecondaryButton href="http://localhost:3000/services">
 							Landlord services
-						</a>
+						</SecondaryButton>
 					</div>
 
 					<div className="flex flex-wrap gap-6 pt-6 text-xs text-slate-400">
