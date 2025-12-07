@@ -115,8 +115,8 @@ export default function ServicesPageClient() {
 		<main className="bg-psr-charcoal text-psr-soft-white">
 			<JsonLd data={servicesJsonLd} />
 			<IntroSection />
-			<TenantScreeningSection />
 			<DesignConsultsSection />
+			<TenantScreeningSection />
 			<RentalPrepSection />
 			<LandlordSupportSection />
 			<TenantScreeningFAQSection />
@@ -150,6 +150,107 @@ function IntroSection() {
 						Start with a single room, a single unit, or a single
 						decision and grow into a full portfolio standard.
 					</p>
+				</motion.div>
+			</div>
+		</section>
+	);
+}
+
+/* ------------- DESIGN CONSULTS & STYLING SECTION ------------- */
+
+function DesignConsultsSection() {
+	return (
+		<section className="border-b border-neutral-800">
+			<div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.4fr,1fr] md:py-20">
+				<motion.div
+					className="space-y-4"
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7 }}
+				>
+					<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-soft-white/60">
+						Virtual Interior Design & Styling
+					</p>
+					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl text-psr-ivory">
+						Quiet, structured, and tailored to your level of
+						involvement.
+					</h2>
+					<p className="text-sm text-psr-soft-white/80">
+						From single rooms to entire apartments, our virtual
+						design sessions focus on layout, palette, and pieces
+						that match both your taste and the property’s future—
+						whether that is a long-term rental, a sale, or simply a
+						more intentional home.
+					</p>
+					<div className="grid gap-4 pt-4 text-[0.85rem] md:grid-cols-2">
+						<div className="space-y-1 text-psr-soft-white/75">
+							<p className="text-[0.65rem] uppercase tracking-[0.25em] text-psr-soft-white/60">
+								What we cover
+							</p>
+							<ul className="space-y-1">
+								<li>• Layout and furniture planning</li>
+								<li>• Color, materials, and lighting</li>
+								<li>• Styling details and layers</li>
+								<li>
+									• Rental-safe updates that still feel
+									upgraded
+								</li>
+							</ul>
+						</div>
+						<div className="space-y-1 text-psr-soft-white/75">
+							<p className="text-[0.65rem] uppercase tracking-[0.25em] text-psr-soft-white/60">
+								After the call
+							</p>
+							<ul className="space-y-1">
+								<li>• A concise recap of key decisions</li>
+								<li>• Shoppable links for agreed pieces</li>
+								<li>
+									• Options at multiple price tiers when
+									helpful
+								</li>
+								<li>
+									• Light sourcing support as you execute the
+									plan
+								</li>
+							</ul>
+						</div>
+					</div>
+					<p className="text-[0.85rem] text-psr-soft-white/70">
+						We can also coordinate with your existing team—agents,
+						contractors, or photographers—so the design supports the
+						listing or rental strategy.
+					</p>
+				</motion.div>
+				<motion.div
+					className="space-y-3 rounded-2xl border border-neutral-800 bg-psr-charcoal-soft/70 p-5 text-[0.85rem] text-psr-soft-white/80"
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7, delay: 0.05 }}
+				>
+					<p className="font-semibold text-psr-soft-white">
+						Ideal for
+					</p>
+					<ul className="mt-1 space-y-1">
+						<li>• Owners refreshing a primary home</li>
+						<li>• Landlords elevating a key unit</li>
+						<li>• Sellers preparing a quiet listing</li>
+						<li>• Design clients wanting a second opinion</li>
+					</ul>
+					<p className="mt-3 text-psr-soft-white/70">
+						Sessions are conducted virtually, with follow-up
+						delivered in a clean, editorial-style recap instead of a
+						heavy design package.
+					</p>
+					<div className="pt-2">
+						<a
+							href="https://phoenixstreetrealty.com/contact"
+							className="border-b border-transparent pb-[2px] text-psr-gold hover:border-psr-gold"
+						>
+							Request a design consult →
+						</a>
+					</div>
 				</motion.div>
 			</div>
 		</section>
@@ -308,107 +409,6 @@ function TenantScreeningSection() {
 							className="border-b border-transparent pb-[2px] text-psr-gold hover:border-psr-gold"
 						>
 							Start a tenant screening request →
-						</a>
-					</div>
-				</motion.div>
-			</div>
-		</section>
-	);
-}
-
-/* ------------- DESIGN CONSULTS & STYLING SECTION ------------- */
-
-function DesignConsultsSection() {
-	return (
-		<section className="border-b border-neutral-800">
-			<div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.4fr,1fr] md:py-20">
-				<motion.div
-					className="space-y-4"
-					initial={{ opacity: 0, y: 24 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.4 }}
-					transition={{ duration: 0.7 }}
-				>
-					<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-soft-white/60">
-						Virtual Interior Design & Styling
-					</p>
-					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl text-psr-ivory">
-						Quiet, structured, and tailored to your level of
-						involvement.
-					</h2>
-					<p className="text-sm text-psr-soft-white/80">
-						From single rooms to entire apartments, our virtual
-						design sessions focus on layout, palette, and pieces
-						that match both your taste and the property’s future—
-						whether that is a long-term rental, a sale, or simply a
-						more intentional home.
-					</p>
-					<div className="grid gap-4 pt-4 text-[0.85rem] md:grid-cols-2">
-						<div className="space-y-1 text-psr-soft-white/75">
-							<p className="text-[0.65rem] uppercase tracking-[0.25em] text-psr-soft-white/60">
-								What we cover
-							</p>
-							<ul className="space-y-1">
-								<li>• Layout and furniture planning</li>
-								<li>• Color, materials, and lighting</li>
-								<li>• Styling details and layers</li>
-								<li>
-									• Rental-safe updates that still feel
-									upgraded
-								</li>
-							</ul>
-						</div>
-						<div className="space-y-1 text-psr-soft-white/75">
-							<p className="text-[0.65rem] uppercase tracking-[0.25em] text-psr-soft-white/60">
-								After the call
-							</p>
-							<ul className="space-y-1">
-								<li>• A concise recap of key decisions</li>
-								<li>• Shoppable links for agreed pieces</li>
-								<li>
-									• Options at multiple price tiers when
-									helpful
-								</li>
-								<li>
-									• Light sourcing support as you execute the
-									plan
-								</li>
-							</ul>
-						</div>
-					</div>
-					<p className="text-[0.85rem] text-psr-soft-white/70">
-						We can also coordinate with your existing team—agents,
-						contractors, or photographers—so the design supports the
-						listing or rental strategy.
-					</p>
-				</motion.div>
-				<motion.div
-					className="space-y-3 rounded-2xl border border-neutral-800 bg-psr-charcoal-soft/70 p-5 text-[0.85rem] text-psr-soft-white/80"
-					initial={{ opacity: 0, y: 24 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.4 }}
-					transition={{ duration: 0.7, delay: 0.05 }}
-				>
-					<p className="font-semibold text-psr-soft-white">
-						Ideal for
-					</p>
-					<ul className="mt-1 space-y-1">
-						<li>• Owners refreshing a primary home</li>
-						<li>• Landlords elevating a key unit</li>
-						<li>• Sellers preparing a quiet listing</li>
-						<li>• Design clients wanting a second opinion</li>
-					</ul>
-					<p className="mt-3 text-psr-soft-white/70">
-						Sessions are conducted virtually, with follow-up
-						delivered in a clean, editorial-style recap instead of a
-						heavy design package.
-					</p>
-					<div className="pt-2">
-						<a
-							href="https://phoenixstreetrealty.com/contact"
-							className="border-b border-transparent pb-[2px] text-psr-gold hover:border-psr-gold"
-						>
-							Request a design consult →
 						</a>
 					</div>
 				</motion.div>

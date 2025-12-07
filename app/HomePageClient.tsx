@@ -187,14 +187,14 @@ const servicesTeaser = [
 		body: "Room-by-room guidance on layout, palette, and pieces—delivered privately over video.",
 	},
 	{
-		label: "Rental ready",
-		title: "Property Prep",
-		body: "Rent-ready plans, finishes, and photographs so rentals feel considered, not improvised.",
-	},
-	{
 		label: "Landlord",
 		title: "Tenant Screening & Landlord Systems",
 		body: "Premium tenant screening, background checks, and calm landlord systems so you can make decisions with confidence.",
+	},
+	{
+		label: "Rental ready",
+		title: "Property Prep",
+		body: "Rent-ready plans, finishes, and photographs so rentals feel considered, not improvised.",
 	},
 ];
 
