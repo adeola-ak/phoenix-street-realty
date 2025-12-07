@@ -605,7 +605,7 @@ function FinalCtaSection() {
 						Private inquiry
 					</p>
 					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl">
-						tell us about your property.
+						Tell us about your property.
 					</h2>
 					<p className="text-sm text-neutral-800/85">
 						For design-led rentals, off-market preparations, or
