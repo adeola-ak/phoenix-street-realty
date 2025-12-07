@@ -16,9 +16,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-	title: "Phoenix Street Realty",
+	metadataBase: new URL("https://phoenixstreetrealty.com"),
+	title: {
+		default: "Phoenix Street Realty",
+		template: "%s | Phoenix Street Realty",
+	},
 	description:
-		"A private real estate and home-design house blending quiet luxury, modern architecture, and editorial interiors.",
+		"Luxury real estate services, interior design consulting, rental prep, tenant screening, and landlord support.",
 };
 
 export default function RootLayout({
@@ -57,7 +61,7 @@ function SiteHeader() {
 							Phoenix Street
 						</span>
 						<span className="text-[0.65rem] text-psr-soft-white/40">
-							realty & home design
+							realty &amp; home design
 						</span>
 					</div>
 				</div>
@@ -68,6 +72,7 @@ function SiteHeader() {
 					<NavLink href="/services">Services</NavLink>
 					<NavLink href="/portfolio">Portfolio</NavLink>
 					<NavLink href="/blog">Journal</NavLink>
+					<NavLink href="/about">About</NavLink>
 					<NavLink href="/contact">Contact</NavLink>
 				</nav>
 
