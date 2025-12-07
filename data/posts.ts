@@ -36,7 +36,8 @@ your main living area with that first photo in mind.
   },
   {
     slug: "calm-landlord-systems",
-    title: "The calm landlord: systems for move-ins, move-outs, and rent-ready units",
+    title:
+      "The calm landlord: systems for move-ins, move-outs, and rent-ready units",
     category: "Landlord tips",
     date: "2025-02-02",
     excerpt:

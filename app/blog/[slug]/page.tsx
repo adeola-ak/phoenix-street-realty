@@ -26,7 +26,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 				<p className="mt-2 text-xs text-slate-400">{post?.date}</p>
 
 				<article className="prose prose-invert prose-sm mt-8 max-w-none">
-					{/* Very basic markdown-ish rendering */}
 					{post?.content.split("\n").map((line, index) => {
 						if (line.startsWith("### ")) {
 							return (
