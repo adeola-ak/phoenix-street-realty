@@ -15,6 +15,9 @@ export function generateMetadata({ params }: BlogPostPageProps): Metadata {
 		return {
 			title: "Article Not Found | Phoenix Street Realty",
 			description: "The requested article could not be found.",
+			alternates: {
+				canonical: "https://phoenixstreetrealty.com/blog",
+			},
 		};
 	}
 
@@ -23,12 +26,15 @@ export function generateMetadata({ params }: BlogPostPageProps): Metadata {
 		description: post.excerpt ?? post.title,
 		keywords: [
 			post.category?.toLowerCase(),
-			"real estate tips",
-			"interior design insights",
-			"tenant screening guide",
-			"landlord advice",
-			"rental property prep",
+			"tenant screening tips",
+			"interior design guide",
+			"landlord support article",
+			"real estate insights",
+			"fraud detection tenant",
 		],
+		alternates: {
+			canonical: `https://phoenixstreetrealty.com/blog/${post.slug}`,
+		},
 		openGraph: {
 			title: post.title,
 			description: post.excerpt ?? post.title,

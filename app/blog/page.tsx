@@ -2,21 +2,24 @@ import type { Metadata } from "next";
 import BlogPageClient from "./BlogPageClient";
 
 export const metadata: Metadata = {
-	title: "Journal | Phoenix Street Realty – Design, Real Estate & Landlord Insights",
+	title: "Journal | Real Estate, Tenant Screening & Interior Design Insights",
 	description:
-		"Articles and guides on interior design, tenant screening, rental prep, landlord systems, and modern real-estate strategy.",
+		"Read articles on luxury interior design, tenant screening best practices, identity verification, fraud detection, rental prep, real estate strategy, and landlord support.",
 	keywords: [
-		"interior design blog",
-		"real estate guides",
-		"tenant screening advice",
-		"landlord tips",
+		"tenant screening tips",
+		"real estate insights",
+		"interior design ideas",
+		"landlord advice",
 		"rental property preparation",
-		"home styling guides",
+		"fraud detection tenants",
 	],
+	alternates: {
+		canonical: "https://phoenixstreetrealty.com/blog",
+	},
 	openGraph: {
 		title: "Journal | Phoenix Street Realty",
 		description:
-			"Insights at the intersection of design, real estate, and modern property ownership.",
+			"Luxury real estate, tenant screening insights, and interior design perspectives.",
 		url: "https://phoenixstreetrealty.com/blog",
 		siteName: "Phoenix Street Realty",
 		type: "website",

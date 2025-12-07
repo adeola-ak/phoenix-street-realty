@@ -2,21 +2,23 @@ import type { Metadata } from "next";
 import PortfolioPageClient from "./PortfolioPageClient";
 
 export const metadata: Metadata = {
-	title: "Portfolio | Phoenix Street Realty – Design-Led Projects & Transformations",
+	title: "Portfolio | Design-Led Real Estate, Rental Transformations & Editorial Interiors",
 	description:
-		"A curated selection of rental transformations, design refreshes, styling projects, and future real-estate renovations by Phoenix Street Realty.",
+		"Explore Phoenix Street Realty’s design-led portfolio of styled rentals, interior transformations, staging concepts, and elevated property preparations.",
 	keywords: [
 		"interior design portfolio",
-		"real estate renovations",
-		"before and after home design",
-		"rental property styling",
-		"luxury home staging",
-		"design transformations",
+		"before and after rental prep",
+		"styled rental property",
+		"luxury interior design",
+		"real estate design examples",
 	],
+	alternates: {
+		canonical: "https://phoenixstreetrealty.com/portfolio",
+	},
 	openGraph: {
 		title: "Portfolio | Phoenix Street Realty",
 		description:
-			"Explore design-led projects and transformations by Phoenix Street Realty.",
+			"A curated collection of design-led rental transformations, styling work, and editorial interior concepts.",
 		url: "https://phoenixstreetrealty.com/portfolio",
 		siteName: "Phoenix Street Realty",
 		type: "website",

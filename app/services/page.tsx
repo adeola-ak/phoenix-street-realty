@@ -2,25 +2,34 @@ import type { Metadata } from "next";
 import ServicesPageClient from "./ServicesPageClient";
 
 export const metadata: Metadata = {
-	title: "Services | Phoenix Street Realty – Interior Design, Rental Prep & Tenant Screening",
+	title: "Services | Luxury Tenant Screening, Interior Design Consults & Rental Prep",
 	description:
-		"Explore Phoenix Street Realty’s design-led services: virtual interior design consultations, rental-ready prep, landlord support systems, and comprehensive tenant screening with background, credit, identity, and rental history checks.",
+		"Explore Phoenix Street Realty’s design-led services: premium tenant screening with manual verification, identity checks, fraud detection, income confirmation, rental-ready property prep, virtual design consults, sourcing & purchasing decor, and trusted vendor recommendations.",
 	keywords: [
-		"tenant screening services",
+		"tenant screening",
 		"tenant background checks",
 		"identity verification",
-		"criminal background check",
-		"eviction history search",
-		"landlord support",
-		"rental prep",
-		"interior design consultation",
+		"manual employment verification",
+		"fraud detection tenant",
+		"pay stub manipulation check",
+		"eviction search",
 		"credit check for tenants",
-		"employment verification",
+		"landlord support services",
+		"interior design consultation",
+		"virtual home design",
+		"rental property prep",
+		"cleaner recommendations",
+		"painter recommendations",
+		"maintenance vendor recommendations",
+		"luxury real estate services",
 	],
+	alternates: {
+		canonical: "https://phoenixstreetrealty.com/services",
+	},
 	openGraph: {
-		title: "Services | Phoenix Street Realty",
+		title: "Phoenix Street Realty Services – Tenant Screening, Design Consults, Rental Prep",
 		description:
-			"Modern, design-forward services for sellers, landlords, and owners.",
+			"Design-forward services including tenant screening, design consultations, home styling, purchasing assistance, and landlord support.",
 		url: "https://phoenixstreetrealty.com/services",
 		siteName: "Phoenix Street Realty",
 		type: "website",
