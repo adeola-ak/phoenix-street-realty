@@ -1,11 +1,24 @@
 "use client";
 
+import { JsonLd } from "@/components/seo/JsonLd";
 import { motion } from "framer-motion";
 import { posts } from "@/data/posts";
 
 export default function BlogPage() {
+	const blogJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "Blog",
+		"@id": "https://phoenixstreetrealty.com/blog",
+		url: "https://phoenixstreetrealty.com/blog",
+		name: "Journal – Phoenix Street Realty",
+		description:
+			"Luxury real estate, tenant screening, landlord systems, and interior design insights from Phoenix Street Realty.",
+	};
+
 	return (
 		<main className="bg-psr-charcoal text-psr-soft-white">
+			<JsonLd data={blogJsonLd} />
+
 			<section className="border-b border-neutral-800">
 				<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
 					<motion.div

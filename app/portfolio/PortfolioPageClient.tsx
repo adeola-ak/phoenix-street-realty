@@ -1,5 +1,6 @@
 "use client";
 
+import { JsonLd } from "@/components/seo/JsonLd";
 import { motion } from "framer-motion";
 
 const projects = [
@@ -33,9 +34,19 @@ const projects = [
 	},
 ];
 
-export default function PortfolioPage() {
+export default function PortfolioPageClient() {
+	const portfolioJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "CollectionPage",
+		"@id": "https://phoenixstreetrealty.com/portfolio",
+		url: "https://phoenixstreetrealty.com/portfolio",
+		name: "Portfolio – Phoenix Street Realty",
+		description:
+			"Design-led interior transformations, styled rentals, and portfolio-ready spaces by Phoenix Street Realty.",
+	};
 	return (
 		<main className="bg-psr-charcoal text-psr-soft-white">
+			<JsonLd data={portfolioJsonLd} />
 			<IntroSection />
 			<ProjectGridSection />
 			<FuturePortfolioSection />

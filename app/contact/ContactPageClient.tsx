@@ -1,12 +1,23 @@
 "use client";
 
+import { JsonLd } from "@/components/seo/JsonLd";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { PrimaryButton } from "@/components/ui/PrimaryButton";
 
 const FORM_ENDPOINT = "https://formspree.io/f/xdkqdqyg";
 
-export default function ContactPage() {
+export default function ContactPageClient() {
+	const contactJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "ContactPage",
+		"@id": "https://phoenixstreetrealty.com/contact",
+		url: "https://phoenixstreetrealty.com/contact",
+		name: "Contact Phoenix Street Realty",
+		description:
+			"Contact Phoenix Street Realty to book tenant screening, interior design consults, rental prep, or landlord support.",
+	};
+
 	const [status, setStatus] = useState<
 		"idle" | "submitting" | "submitted" | "error"
 	>("idle");
@@ -40,6 +51,7 @@ export default function ContactPage() {
 
 	return (
 		<main className="bg-psr-charcoal text-psr-soft-white">
+			<JsonLd data={contactJsonLd} />
 			<section className="border-b border-neutral-800">
 				<div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.1fr,1.2fr] md:py-20">
 					{/* Left: copy */}

@@ -1,5 +1,6 @@
 "use client";
 
+import { JsonLd } from "@/components/seo/JsonLd";
 import { motion } from "framer-motion";
 
 type BlogPostClientProps = {
@@ -14,8 +15,28 @@ type BlogPostClientProps = {
 };
 
 export default function BlogPostClient({ post }: BlogPostClientProps) {
+	const articleJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "Article",
+		"@id": `https://phoenixstreetrealty.com/blog/${post.slug}#article`,
+		url: `https://phoenixstreetrealty.com/blog/${post.slug}`,
+		headline: post.title,
+		description: post.excerpt || post.title,
+		datePublished: post.date,
+		author: {
+			"@type": "Person",
+			name: "Phoenix Street Realty",
+		},
+		publisher: {
+			"@type": "Organization",
+			name: "Phoenix Street Realty",
+			url: "https://phoenixstreetrealty.com/",
+		},
+	};
+
 	return (
 		<main className="bg-psr-charcoal text-psr-soft-white">
+			<JsonLd data={articleJsonLd} />
 			<section className="border-b border-neutral-800">
 				<div className="mx-auto max-w-3xl px-6 py-16 md:py-20">
 					{/* HEADER */}

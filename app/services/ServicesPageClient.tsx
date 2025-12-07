@@ -1,5 +1,6 @@
 "use client";
 
+import { JsonLd } from "@/components/seo/JsonLd";
 import { motion } from "framer-motion";
 import { PrimaryButton, SecondaryButton } from "@/components/ui/PrimaryButton";
 
@@ -116,8 +117,94 @@ const processSteps = [
 ];
 
 export default function ServicesPageClient() {
+	const servicesJsonLd = {
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Service",
+				"@id": "https://phoenixstreetrealty.com/services#tenant-screening",
+				name: "Tenant Screening Services",
+				serviceType:
+					"Tenant screening and background checks for landlords and property owners.",
+				provider: {
+					"@type": "Organization",
+					name: "Phoenix Street Realty",
+					url: "https://phoenixstreetrealty.com/",
+				},
+				areaServed: {
+					"@type": "Place",
+					name: "United States",
+				},
+				description:
+					"Premium tenant screening with fast turnaround, manual verification, employer and landlord calls, fraud detection, identity checks, credit review, eviction search, and a clear, easy-to-read report for landlords.",
+				termsOfService:
+					"https://phoenixstreetrealty.com/services#tenant-screening-terms",
+			},
+			{
+				"@type": "Service",
+				"@id": "https://phoenixstreetrealty.com/services#design-consults",
+				name: "Interior Design Consultations & Rental Prep",
+				serviceType:
+					"Virtual interior design consultations, rental-ready property preparation, and styling.",
+				provider: {
+					"@type": "Organization",
+					name: "Phoenix Street Realty",
+					url: "https://phoenixstreetrealty.com/",
+				},
+				description:
+					"Design-forward services including virtual interior consults, room-by-room styling, curated purchasing of furniture and decor, and recommendations for cleaners, painters, and maintenance providers.",
+			},
+			{
+				"@type": "FAQPage",
+				"@id": "https://phoenixstreetrealty.com/services#tenant-screening-faq",
+				mainEntity: [
+					{
+						"@type": "Question",
+						name: "What does your tenant screening include?",
+						acceptedAnswer: {
+							"@type": "Answer",
+							text: "Our tenant screening includes identity confirmation, criminal and sex offender checks, eviction history, full credit report and score, income and employment verification, prior landlord references, and a clear summary report.",
+						},
+					},
+					{
+						"@type": "Question",
+						name: "Do you manually verify employers and past landlords?",
+						acceptedAnswer: {
+							"@type": "Answer",
+							text: "Yes. We manually contact employers and prior landlords, ask detailed questions, and detect fake or mismatched references when possible.",
+						},
+					},
+					{
+						"@type": "Question",
+						name: "Can you detect fraud in documents like pay stubs or bank statements?",
+						acceptedAnswer: {
+							"@type": "Answer",
+							text: "We review documents for inconsistencies, manipulation, and red flags in pay stubs and bank statements, and we surface any concerns in the final report.",
+						},
+					},
+					{
+						"@type": "Question",
+						name: "Are your tenant screening services compliant with housing laws?",
+						acceptedAnswer: {
+							"@type": "Answer",
+							text: "Our process is designed to be aligned with FCRA and fair housing guidance, using reputable consumer reporting agencies and fair, consistent criteria for each applicant.",
+						},
+					},
+					{
+						"@type": "Question",
+						name: "Do you offer bulk screening for multiple units or portfolios?",
+						acceptedAnswer: {
+							"@type": "Answer",
+							text: "Yes. We offer bulk or repeat screening packages for landlords, small portfolios, and property managers with multiple applications.",
+						},
+					},
+				],
+			},
+		],
+	};
 	return (
 		<main className="bg-psr-charcoal text-psr-soft-white">
+			<JsonLd data={servicesJsonLd} />
 			<IntroSection />
 			<ServiceGridSection />
 			<ProcessSection />

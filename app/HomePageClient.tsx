@@ -2,10 +2,41 @@
 
 import { motion } from "framer-motion";
 import { PrimaryButton, SecondaryButton } from "@/components/ui/PrimaryButton";
+import { JsonLd } from "@/components/seo/JsonLd";
 
-export default function Home() {
+export default function HomePageClient() {
+	const jsonLd = {
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "WebSite",
+				"@id": "https://phoenixstreetrealty.com/#website",
+				url: "https://phoenixstreetrealty.com/",
+				name: "Phoenix Street Realty",
+				description:
+					"Luxury real estate, tenant screening, and interior design consults for sellers, landlords, and investors.",
+				inLanguage: "en",
+				publisher: {
+					"@id": "https://phoenixstreetrealty.com/#organization",
+				},
+			},
+			{
+				"@type": "Organization",
+				"@id": "https://phoenixstreetrealty.com/#organization",
+				name: "Phoenix Street Realty",
+				url: "https://phoenixstreetrealty.com/",
+				description:
+					"A luxury real-estate and home-design house offering tenant screening, design consults, rental prep, curated purchasing, and landlord support.",
+				logo: {
+					"@type": "ImageObject",
+					url: "https://phoenixstreetrealty.com/logo.png",
+				},
+			},
+		],
+	};
 	return (
 		<main className="bg-psr-charcoal text-psr-soft-white">
+			<JsonLd data={jsonLd} />
 			<HeroSection />
 			<ServicesTeaserSection />
 			<BrandStatementSection />
@@ -24,7 +55,6 @@ function HeroSection() {
 	return (
 		<section className="border-b border-neutral-800">
 			<div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-24 md:flex-row md:items-center lg:gap-20">
-				{/* Left: copy */}
 				<div className="flex-1 space-y-8">
 					<motion.p
 						className="text-[0.6rem] tracking-[0.35em] uppercase text-psr-soft-white/60"

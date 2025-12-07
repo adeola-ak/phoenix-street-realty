@@ -1,10 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export function AboutPageClient() {
+	const aboutJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"@id": "https://phoenixstreetrealty.com/about#organization",
+		url: "https://phoenixstreetrealty.com/about",
+		name: "Phoenix Street Realty",
+		description:
+			"A luxury real-estate and interior-design house offering design consults, curated purchasing, vendor recommendations, rental prep, and premium tenant screening.",
+	};
 	return (
 		<main className="bg-psr-charcoal text-psr-soft-white">
+			<JsonLd data={aboutJsonLd} />
 			<section className="border-b border-neutral-800">
 				<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
 					<motion.div
