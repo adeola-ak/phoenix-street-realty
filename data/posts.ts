@@ -5,6 +5,8 @@ export type Post = {
   date: string;
   excerpt: string;
   content: string;
+  heroImage: string;      // new
+  heroImageAlt: string;   // new
 };
 
 export const posts: Post[] = [
@@ -33,6 +35,8 @@ your main living area with that first photo in mind.
 
 (You can expand this content later with images, more sections, and links.)
     `,
+    heroImage: "/images/blog/design-tweaks-for-premium-rentals.jpg",
+    heroImageAlt: "Softly lit living room in a premium-feeling rental with warm lighting and neutral furniture.",
   },
   {
     slug: "calm-landlord-systems",
@@ -55,6 +59,8 @@ photos, and communication.
 
 Add more detail here as your processes evolve.
     `,
+    heroImage: "/images/blog/calm-landlord-systems.jpg",
+    heroImageAlt: "Organized entryway with key hooks, clipboard, and tidy storage representing calm landlord systems.",
   },
   {
     slug: "design-minded-investing-101",
@@ -76,5 +82,7 @@ often more efficiently than full structural changes.
 
 You can grow this article as your portfolio and perspective grow.
     `,
+    heroImage: "/images/blog/design-minded-investing-101.jpg",
+    heroImageAlt: "Modern open-plan living area showing a well-designed investment property with natural light.",
   },
 ];
