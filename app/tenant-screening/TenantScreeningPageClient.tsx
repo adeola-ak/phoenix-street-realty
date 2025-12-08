@@ -550,10 +550,10 @@ function FinalCtaSection() {
 					<p className="text-[0.75rem] text-neutral-700">
 						Or email us at{" "}
 						<a
-							href="mailto:hello@phoenixstreetrealty.com"
+							href="mailto:phoenixstreetrealty@gmail.com"
 							className="border-b border-neutral-500 pb-[1px]"
 						>
-							hello@phoenixstreetrealty.com
+							phoenixstreetrealty@gmail.com
 						</a>
 						.
 					</p>

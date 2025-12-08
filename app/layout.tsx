@@ -148,10 +148,10 @@ function SiteFooter() {
 						<p>
 							Email:{" "}
 							<a
-								href="mailto:hello@phoenixstreetrealty.com"
+								href="mailto:phoenixstreetrealty@gmail.com"
 								className="border-b border-psr-soft-white/30 pb-[1px] hover:text-psr-gold"
 							>
-								hello@phoenixstreetrealty.com
+								phoenixstreetrealty@gmail.com
 							</a>
 						</p>
 						<p className="text-psr-soft-white/60">

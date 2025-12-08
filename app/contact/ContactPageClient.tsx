@@ -351,10 +351,10 @@ function SidebarSection() {
 						<p className="text-[0.85rem]">
 							Email:{" "}
 							<a
-								href="mailto:hello@phoenixstreetrealty.com"
+								href="mailto:phoenixstreetrealty@gmail.com"
 								className="border-b border-neutral-500 pb-[1px]"
 							>
-								hello@phoenixstreetrealty.com
+								phoenixstreetrealty@gmail.com
 							</a>
 						</p>
 					</div>

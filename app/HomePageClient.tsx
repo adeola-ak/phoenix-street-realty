@@ -506,7 +506,7 @@ function VisionSection() {
 						Investment focus
 					</p>
 					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl">
-						where design and returns speak the same language.
+						Where design and returns speak the same language.
 					</h2>
 					<p className="text-sm text-neutral-800/85">
 						Phoenix Street Realty is building a design-led
@@ -626,10 +626,10 @@ function FinalCtaSection() {
 					<p className="text-[0.75rem] text-neutral-700">
 						Or email us at{" "}
 						<a
-							href="mailto:hello@phoenixstreetrealty.com"
+							href="mailto:phoenixstreetrealty@gmail.com"
 							className="border-b border-neutral-500 pb-[1px]"
 						>
-							hello@phoenixstreetrealty.com
+							phoenixstreetrealty@gmail.com
 						</a>
 						.
 					</p>
