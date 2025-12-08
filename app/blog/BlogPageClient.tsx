@@ -15,6 +15,10 @@ export default function BlogPage() {
 			"Luxury real estate, tenant screening, landlord systems, and interior design insights from Phoenix Street Realty.",
 	};
 
+	const sortedPosts = [...posts].sort(
+		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+	);
+
 	return (
 		<main className="bg-psr-charcoal text-psr-soft-white">
 			<JsonLd data={blogJsonLd} />
@@ -58,7 +62,7 @@ export default function BlogPage() {
 							},
 						}}
 					>
-						{posts.map((post) => (
+						{sortedPosts.map((post) => (
 							<motion.article
 								key={post.slug}
 								className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-black/40 p-5"

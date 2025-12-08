@@ -1,45 +1,58 @@
 "use client";
 
-import { JsonLd } from "@/components/seo/JsonLd";
 import { motion } from "framer-motion";
+import { JsonLd } from "@/components/seo/JsonLd";
+import type { Post } from "@/data/posts";
 
 type BlogPostClientProps = {
-	post: {
-		slug: string;
-		title: string;
-		date: string;
-		category?: string;
-		excerpt?: string;
-		content: string;
-	};
+	post: Post;
 };
 
 export default function BlogPostClient({ post }: BlogPostClientProps) {
-	const articleJsonLd = {
+	const postJsonLd = {
 		"@context": "https://schema.org",
-		"@type": "Article",
-		"@id": `https://phoenixstreetrealty.com/blog/${post.slug}#article`,
-		url: `https://phoenixstreetrealty.com/blog/${post.slug}`,
+		"@type": "BlogPosting",
 		headline: post.title,
-		description: post.excerpt || post.title,
+		articleSection: post.category,
 		datePublished: post.date,
-		author: {
-			"@type": "Person",
-			name: "Phoenix Street Realty",
+		abstract: post.excerpt,
+		url: `https://phoenixstreetrealty.com/blog/${post.slug}`,
+		mainEntityOfPage: {
+			"@type": "WebPage",
+			"@id": `https://phoenixstreetrealty.com/blog/${post.slug}`,
 		},
 		publisher: {
 			"@type": "Organization",
 			name: "Phoenix Street Realty",
-			url: "https://phoenixstreetrealty.com/",
+			url: "https://phoenixstreetrealty.com",
 		},
 	};
 
+	// Safety guard in case a post somehow has no content
+	if (!post.content) {
+		return (
+			<main className="bg-psr-charcoal text-psr-soft-white">
+				<section className="border-b border-neutral-800">
+					<div className="mx-auto max-w-3xl px-6 py-16 md:py-20">
+						<p>Content coming soon.</p>
+						<a
+							href="https://phoenixstreetrealty.com/blog"
+							className="mt-6 inline-block border-b border-transparent pb-[2px] text-psr-gold hover:border-psr-gold"
+						>
+							Back to journal
+						</a>
+					</div>
+				</section>
+			</main>
+		);
+	}
+
 	return (
 		<main className="bg-psr-charcoal text-psr-soft-white">
-			<JsonLd data={articleJsonLd} />
+			<JsonLd data={postJsonLd} />
+
 			<section className="border-b border-neutral-800">
 				<div className="mx-auto max-w-3xl px-6 py-16 md:py-20">
-					{/* HEADER */}
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +70,6 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
 						</p>
 					</motion.div>
 
-					{/* CONTENT */}
 					<motion.article
 						className="mt-8 space-y-3 text-sm text-psr-soft-white/80"
 						initial={{ opacity: 0, y: 20 }}
@@ -83,7 +95,6 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
 						})}
 					</motion.article>
 
-					{/* FOOTER / BACK LINK */}
 					<motion.div
 						className="mt-10 text-[0.8rem] text-psr-soft-white/60"
 						initial={{ opacity: 0, y: 10 }}
