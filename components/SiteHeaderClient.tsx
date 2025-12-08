@@ -43,6 +43,10 @@ export function SiteHeaderClient() {
 				<nav className="hidden items-center gap-8 md:flex">
 					<NavLink href="/">Home</NavLink>
 					<NavLink href="/services">Services</NavLink>
+
+					{/* 🔹 NEW: Tenant Screening in main nav */}
+					<NavLink href="/tenant-screening">Tenant Screening</NavLink>
+
 					<NavLink href="/portfolio">Portfolio</NavLink>
 					<NavLink href="/blog">Journal</NavLink>
 					<NavLink href="/about">About</NavLink>
@@ -52,10 +56,11 @@ export function SiteHeaderClient() {
 				{/* Desktop CTA */}
 				<div className="hidden md:block">
 					<PrimaryButton
-						href="/contact"
+						// 🔹 Point CTA directly to tenant screening
+						href="/tenant-screening"
 						className="px-5 py-2 text-[0.6rem]"
 					>
-						Private consult
+						Book tenant screening
 					</PrimaryButton>
 				</div>
 
@@ -115,6 +120,16 @@ export function SiteHeaderClient() {
 							>
 								Services
 							</MobileNavLink>
+
+							{/* 🔹 NEW: Tenant Screening in mobile nav */}
+							<MobileNavLink
+								href="https://phoenixstreetrealty.com/tenant-screening"
+								active={pathname === "/tenant-screening"}
+								onClick={closeMenu}
+							>
+								Tenant Screening
+							</MobileNavLink>
+
 							<MobileNavLink
 								href="https://phoenixstreetrealty.com/portfolio"
 								active={pathname === "/portfolio"}
@@ -146,11 +161,12 @@ export function SiteHeaderClient() {
 
 							<div className="pt-2">
 								<a
-									href="https://phoenixstreetrealty.com/contact"
+									// 🔹 Mobile CTA also goes to tenant screening
+									href="https://phoenixstreetrealty.com/tenant-screening"
 									onClick={closeMenu}
 									className="inline-flex items-center justify-center rounded-full border border-psr-gold/70 px-4 py-2 text-[0.7rem] uppercase tracking-[0.25em] text-psr-gold hover:bg-psr-gold/10 transition-colors duration-200"
 								>
-									Private consult
+									Book tenant screening
 								</a>
 							</div>
 						</div>

@@ -629,20 +629,20 @@ function TenantScreeningFAQSection() {
 					transition={{ duration: 0.7, delay: 0.05 }}
 				>
 					<FAQItem
-						question="How is your tenant screening different from a basic online background check?"
-						answer="Most low-cost services simply pull records and hand you a raw report. We combine certified screening data with manual verification—calling employers and landlords, reviewing documents, and flagging inconsistencies—so you receive a clear view of who is applying, not just a PDF of results."
+						question="What makes Phoenix Street Realty different from a typical screening or design service?"
+						answer="Unlike one-click screening sites or decorative-only design sessions, we blend design, operations, and applicant verification under one roof. Whether you’re refining a rental, preparing a listing, or evaluating a tenant, our approach is quiet, private, and thorough—combining data with real human judgment."
 					/>
 					<FAQItem
-						question="How quickly will I receive results?"
-						answer="Turnaround time depends on the responsiveness of employers and landlords, but many screenings can be completed within 24–72 hours. We keep you updated so you are never wondering where things stand."
+						question="How do I know where to start if I’m between services?"
+						answer="If you’re unsure, start with a conversation. Some clients begin with screening because they need clarity today; others start with a design consult because their space needs direction first. We guide you based on your goals, timeline, and the level of support you want."
 					/>
 					<FAQItem
-						question="Can you help me interpret the report and make a decision?"
-						answer="Yes. Along with the report, we provide clear context and a risk summary. We do not make the decision for you, but we do explain what we are seeing so that your choice is informed, calm, and defensible."
+						question="Do I need to be local to work with you?"
+						answer="Not at all. Most of our design consults, screenings, and landlord-system setups are done remotely. For rentals, we also provide guidance on cleaners, painters, maintenance partners, and tradespeople, even if we aren’t physically present."
 					/>
 					<FAQItem
-						question="Do you offer screening for multiple units or recurring applicants?"
-						answer="Yes. If you have several units or an ongoing need for tenant screening, we can discuss a recurring or bulk structure that fits your portfolio."
+						question="What kind of landlords or owners benefit most from your services?"
+						answer="We are ideal for owners who value design, consistency, and thoughtful decision-making—sellers preparing a home quietly, landlords elevating rentals, design clients wanting clear direction, and small portfolio owners wanting a more refined process."
 					/>
 				</motion.div>
 
