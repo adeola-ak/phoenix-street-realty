@@ -42,6 +42,7 @@ export default function HomePageClient() {
 			<BrandStatementSection />
 			<AudienceStripSection />
 			<PortfolioTeaserSection />
+			<TestimonialsSection />
 			<VisionSection />
 			<JournalTeaserSection />
 			<FinalCtaSection />
@@ -71,9 +72,9 @@ function HeroSection() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.7, delay: 0.1 }}
 					>
-						Luxury real estate
+						Turning properties
 						<span className="block text-psr-soft-white/90">
-							with a designer’s point of view.
+							into lifestyle assets.
 						</span>
 					</motion.h1>
 
@@ -83,10 +84,10 @@ function HeroSection() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.7, delay: 0.2 }}
 					>
-						A high-end private real estate and home-design house
-						blending quiet wealth, modern architectural minimalism,
-						and editorial interiors—for sellers, landlords, and
-						investors who treat home as a lifestyle asset.
+						A high-end real-estate and design house focused on
+						minimalism, elevated interiors, and strategic value—for
+						sellers, landlords, and investors with a long-view
+						mindset.
 					</motion.p>
 
 					<motion.div
@@ -111,20 +112,18 @@ function HeroSection() {
 					>
 						<div>
 							<p className="font-semibold text-psr-soft-white">
-								Quiet wealth
+								A considered approach
 							</p>
 							<p>
-								Design, operations, and returns with restraint.
+								Design-first thinking paired with strategic
+								operations and long-term return.
 							</p>
 						</div>
 						<div>
 							<p className="font-semibold text-psr-soft-white">
-								For visionaries
+								For the design-minded
 							</p>
-							<p>
-								Sellers, landlords, and investors with a point
-								of view.
-							</p>
+							<p>Sellers and investors with taste and vision.</p>
 						</div>
 					</motion.div>
 				</div>
@@ -463,6 +462,95 @@ function PortfolioTeaserSection() {
 								</p>
 							</div>
 						</motion.div>
+					))}
+				</motion.div>
+			</div>
+		</section>
+	);
+}
+
+/* --------------------- TESTIMONIALS --------------------- */
+
+const testimonials = [
+	{
+		label: "Landlord – city duplex",
+		quote: "They caught inconsistencies in an application I would have missed. The final report made it easy to say no calmly and wait for the right tenant.",
+		name: "Private landlord, small portfolio",
+	},
+	{
+		label: "Design client – living room refresh",
+		quote: "The space finally feels like me, but elevated. Clear direction, links, and no pressure to over-renovate.",
+		name: "Owner-occupied condo",
+	},
+	{
+		label: "First-time landlord",
+		quote: "They built simple move-in, move-out and screening systems so I don’t feel like I’m reinventing everything every time.",
+		name: "Accidental landlord, single unit",
+	},
+];
+
+function TestimonialsSection() {
+	return (
+		<section className="border-b border-neutral-800 bg-psr-charcoal">
+			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+				<motion.div
+					className="mb-8 max-w-3xl space-y-3"
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7 }}
+				>
+					<p className="text-[0.6rem] uppercase tracking-[0.3em] text-psr-soft-white/60">
+						Quiet proof
+					</p>
+					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl text-psr-ivory">
+						What it feels like to work with us.
+					</h2>
+					<p className="text-sm text-psr-soft-white/70">
+						Private owners, first-time landlords, and design clients
+						come to us for calm structure, clear taste, and
+						screening that actually protects the property.
+					</p>
+				</motion.div>
+
+				<motion.div
+					className="grid gap-6 md:grid-cols-3"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.25 }}
+					variants={{
+						hidden: { opacity: 0, y: 32 },
+						visible: {
+							opacity: 1,
+							y: 0,
+							transition: {
+								duration: 0.6,
+								staggerChildren: 0.12,
+							},
+						},
+					}}
+				>
+					{testimonials.map((item) => (
+						<motion.figure
+							key={item.label}
+							className="flex h-full flex-col justify-between rounded-2xl border border-neutral-800 bg-black/40 p-5"
+							variants={{
+								hidden: { opacity: 0, y: 24 },
+								visible: { opacity: 1, y: 0 },
+							}}
+						>
+							<div className="space-y-3">
+								<p className="text-[0.6rem] uppercase tracking-[0.25em] text-psr-soft-white/55">
+									{item.label}
+								</p>
+								<p className="font-[var(--font-playfair)] text-sm leading-relaxed text-psr-soft-white/90">
+									“{item.quote}”
+								</p>
+							</div>
+							<figcaption className="mt-4 text-[0.75rem] text-psr-soft-white/60">
+								{item.name}
+							</figcaption>
+						</motion.figure>
 					))}
 				</motion.div>
 			</div>

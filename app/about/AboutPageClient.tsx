@@ -88,6 +88,10 @@ export function AboutPageClient() {
 								next chapter.
 							</li>
 							<li>
+								• Owners and renters looking to redesign their
+								place of residence.
+							</li>
+							<li>
 								• Investors who see interiors and operations as
 								part of the same strategy.
 							</li>

@@ -76,6 +76,7 @@ export default function TenantScreeningPageClient() {
 			<TierSection />
 			<ProcessSection />
 			<DifferentiatorSection />
+			<TenantScreeningTestimonialsSection />
 			<FaqSection />
 			<FinalCtaSection />
 		</main>
@@ -383,7 +384,7 @@ function DifferentiatorSection() {
 				>
 					<div className="space-y-4 text-sm text-psr-soft-white/80">
 						<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-soft-white/60">
-							Why Phoenix Street
+							Why Phoenix Street Realty
 						</p>
 						<h2 className="font-[var(--font-playfair)] text-2xl text-psr-ivory md:text-3xl">
 							Not just data. Interpretation and pattern
@@ -421,6 +422,107 @@ function DifferentiatorSection() {
 							</li>
 						</ul>
 					</div>
+				</motion.div>
+			</div>
+		</section>
+	);
+}
+
+/* ------------- TENANT SCREENING TESTIMONIALS ------------- */
+
+function TenantScreeningTestimonialsSection() {
+	return (
+		<section className="border-b border-neutral-800 bg-black/40">
+			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+				<motion.div
+					className="mb-6 max-w-3xl space-y-3"
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.7 }}
+				>
+					<p className="text-[0.6rem] uppercase tracking-[0.3em] text-psr-soft-white/60">
+						Landlords on screening
+					</p>
+					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl text-psr-ivory">
+						Peace of mind built on real verification.
+					</h2>
+					<p className="text-sm text-psr-soft-white/75">
+						These are paraphrased reflections from the types of
+						clients we screen for—individual landlords and small
+						portfolio owners who want clear answers, not just data
+						dumps.
+					</p>
+				</motion.div>
+
+				<motion.div
+					className="grid gap-6 md:grid-cols-3"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, amount: 0.25 }}
+					variants={{
+						hidden: { opacity: 0, y: 32 },
+						visible: {
+							opacity: 1,
+							y: 0,
+							transition: {
+								duration: 0.6,
+								staggerChildren: 0.12,
+							},
+						},
+					}}
+				>
+					<motion.div
+						className="rounded-2xl border border-psr-gold/60 bg-black/55 p-5 text-[0.85rem] text-psr-soft-white/85"
+						variants={{
+							hidden: { opacity: 0, y: 24 },
+							visible: { opacity: 1, y: 0 },
+						}}
+					>
+						<p className="text-[0.6rem] uppercase tracking-[0.25em] text-psr-gold/80">
+							Small portfolio owner
+						</p>
+						<p className="mt-2 font-[var(--font-playfair)] leading-relaxed">
+							“Having someone actually call employers and past
+							landlords changed everything. The report made it
+							obvious which applicants were aligned with how I run
+							my buildings.”
+						</p>
+					</motion.div>
+
+					<motion.div
+						className="rounded-2xl border border-neutral-800 bg-black/45 p-5 text-[0.85rem] text-psr-soft-white/85"
+						variants={{
+							hidden: { opacity: 0, y: 24 },
+							visible: { opacity: 1, y: 0 },
+						}}
+					>
+						<p className="text-[0.6rem] uppercase tracking-[0.25em] text-psr-soft-white/60">
+							First-time landlord
+						</p>
+						<p className="mt-2 font-[var(--font-playfair)] leading-relaxed">
+							“They walked me through the report and helped me
+							understand what actually mattered. It felt calm and
+							thorough, not scary.”
+						</p>
+					</motion.div>
+
+					<motion.div
+						className="rounded-2xl border border-neutral-800 bg-black/45 p-5 text-[0.85rem] text-psr-soft-white/85"
+						variants={{
+							hidden: { opacity: 0, y: 24 },
+							visible: { opacity: 1, y: 0 },
+						}}
+					>
+						<p className="text-[0.6rem] uppercase tracking-[0.25em] text-psr-soft-white/60">
+							Repeat client
+						</p>
+						<p className="mt-2 font-[var(--font-playfair)] leading-relaxed">
+							“I use them for every vacancy now. The consistency
+							and documentation make me comfortable saying yes or
+							no quickly.”
+						</p>
+					</motion.div>
 				</motion.div>
 			</div>
 		</section>

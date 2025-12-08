@@ -32,7 +32,7 @@ export function SiteHeaderClient() {
 							Phoenix Street
 						</span>
 						<span className="text-[0.65rem] text-psr-soft-white/40">
-							realty &amp; home design
+							Realty &amp; Home design
 						</span>
 					</div>
 				</div>
