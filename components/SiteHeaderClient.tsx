@@ -9,6 +9,7 @@ import { PrimaryButton } from "@/components/ui/PrimaryButton";
 export function SiteHeaderClient() {
 	const [isOpen, setIsOpen] = useState(false);
 	const pathname = usePathname();
+	const isInvitePage = pathname === "/invite";
 
 	if (isOpen && typeof window !== "undefined") {
 		// noop – re-render closes panel when state changes
@@ -16,6 +17,11 @@ export function SiteHeaderClient() {
 
 	const toggleMenu = () => setIsOpen((prev) => !prev);
 	const closeMenu = () => setIsOpen(false);
+
+	// Hide entire header on invite page
+	if (isInvitePage) {
+		return null;
+	}
 
 	return (
 		<header className="sticky top-0 z-20 border-b border-neutral-800 bg-psr-charcoal/90 backdrop-blur">

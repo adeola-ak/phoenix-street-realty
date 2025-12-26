@@ -33,7 +33,7 @@ export default function ServicesPageClient() {
 				"@id": "https://phoenixstreetrealty.com/services#design-consults",
 				name: "Interior Design Consultations & Rental Prep",
 				serviceType:
-					"Virtual interior design consultations, rental-ready property prep, and styling.",
+					"Interior design consultations, rental-ready property prep, and styling.",
 				provider: {
 					"@type": "Organization",
 					name: "Phoenix Street Realty",
@@ -170,18 +170,18 @@ function DesignConsultsSection() {
 					transition={{ duration: 0.7 }}
 				>
 					<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-soft-white/60">
-						Virtual Interior Design & Styling
+						Interior Design & Styling
 					</p>
 					<h2 className="font-[var(--font-playfair)] text-2xl md:text-3xl text-psr-ivory">
 						Quiet, structured, and tailored to your level of
 						involvement.
 					</h2>
 					<p className="text-sm text-psr-soft-white/80">
-						From single rooms to entire apartments, our virtual
-						design sessions focus on layout, palette, and pieces
-						that match both your taste and the property’s future—
-						whether that is a long-term rental, a sale, or simply a
-						more intentional home.
+						From single rooms to entire apartments, our design
+						sessions focus on layout, palette, and pieces that match
+						both your taste and the property’s future— whether that
+						is a long-term rental, a sale, or simply a more
+						intentional home.
 					</p>
 					<div className="grid gap-4 pt-4 text-[0.85rem] md:grid-cols-2">
 						<div className="space-y-1 text-psr-soft-white/75">
@@ -203,6 +203,7 @@ function DesignConsultsSection() {
 								After the call
 							</p>
 							<ul className="space-y-1">
+								<li>• Optional in person visit</li>
 								<li>• A concise recap of key decisions</li>
 								<li>• Shoppable links for agreed pieces</li>
 								<li>
@@ -235,13 +236,13 @@ function DesignConsultsSection() {
 					<ul className="mt-1 space-y-1">
 						<li>• Owners refreshing a primary home</li>
 						<li>• Landlords elevating a key unit</li>
-						<li>• Sellers preparing a quiet listing</li>
+						<li>• Sellers preparing for a listing</li>
 						<li>• Design clients wanting a second opinion</li>
 					</ul>
 					<p className="mt-3 text-psr-soft-white/70">
-						Sessions are conducted virtually, with follow-up
-						delivered in a clean, editorial-style recap instead of a
-						heavy design package.
+						Sessions are conducted virtually or in person, with
+						follow-up delivered in a clean, editorial-style recap
+						instead of a heavy design package.
 					</p>
 					<div className="pt-2">
 						<a
