@@ -50,10 +50,9 @@ function IntroSection() {
 			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
 				<motion.div
 					className="max-w-3xl space-y-4"
-					initial={{ opacity: 0, y: 24 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.4 }}
-					transition={{ duration: 0.7 }}
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
 				>
 					<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-soft-white/60">
 						Contact
@@ -98,10 +97,10 @@ function FormSection() {
 			<div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
 				<motion.div
 					className="grid gap-10 md:grid-cols-[1.5fr,1fr]"
-					initial={{ opacity: 0, y: 24 }}
+					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.4 }}
-					transition={{ duration: 0.7 }}
+					viewport={{ once: true, amount: 0.1 }}
+					transition={{ duration: 0.5 }}
 				>
 					<form
 						className="space-y-6 rounded-2xl border border-neutral-800 bg-black/40 p-6 text-[0.85rem] shadow-card-soft/40"
@@ -333,10 +332,10 @@ function SidebarSection() {
 			<div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
 				<motion.div
 					className="grid gap-8 md:grid-cols-2"
-					initial={{ opacity: 0, y: 24 }}
+					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.4 }}
-					transition={{ duration: 0.7 }}
+					viewport={{ once: true, amount: 0.1 }}
+					transition={{ duration: 0.5 }}
 				>
 					<div className="space-y-3 text-sm text-neutral-800/85">
 						<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-ember/80">
