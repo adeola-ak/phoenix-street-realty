@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { PrimaryButton, SecondaryButton } from "@/components/ui/PrimaryButton";
 import { JsonLd } from "@/components/seo/JsonLd";
 
@@ -84,7 +85,7 @@ function HeroSection() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.7, delay: 0.2 }}
 					>
-						A high-end real-estate and design house focused on
+						A high-end real estate and design house focused on
 						minimalism, elevated interiors, and strategic value—for
 						sellers, landlords, and investors with a long-view
 						mindset.
@@ -181,9 +182,9 @@ function HeroSection() {
 
 const servicesTeaser = [
 	{
-		label: "Virtual",
-		title: "Interior Design Consults",
-		body: "Room-by-room guidance on layout, palette, and pieces—delivered privately over video.",
+		label: "Home",
+		title: "Interior Design",
+		body: "Room-by-room guidance on layout, palette, and pieces—delivered privately in your space or over video.",
 	},
 	{
 		label: "Landlord",
@@ -257,12 +258,12 @@ function ServicesTeaserSection() {
 								</p>
 							</div>
 							<div className="mt-5 text-[0.75rem] text-psr-soft-white/60">
-								<a
+								<Link
 									href="/services"
 									className="border-b border-transparent pb-[2px] text-psr-gold hover:border-psr-gold"
 								>
 									View all services →
-								</a>
+								</Link>
 							</div>
 						</motion.div>
 					))}
@@ -307,8 +308,9 @@ function BrandStatementSection() {
 						long-term assets—not one-off transactions.
 					</p>
 					<p>
-						From virtual interior consults and rent-ready prep to
-						portfolio conversations, we help sellers, landlords, and
+						From virtual interior consults, in person design
+						makeovers, and rent-ready prep to portfolio
+						conversations, we help sellers, landlords, and
 						design-minded investors make decisions that look as good
 						as they perform.
 					</p>
@@ -331,7 +333,7 @@ const audiences = [
 	},
 	{
 		label: "Design clients",
-		text: "Virtual styling and space planning with a clear point of view.",
+		text: "Styling and space planning with a clear point of view.",
 	},
 	{
 		label: "Investors",
@@ -412,12 +414,12 @@ function PortfolioTeaserSection() {
 							Spaces with a story.
 						</h2>
 					</div>
-					<a
+					<Link
 						href="/portfolio"
 						className="text-[0.7rem] tracking-[0.25em] uppercase text-psr-gold"
 					>
 						Explore the portfolio →
-					</a>
+					</Link>
 				</motion.div>
 
 				<motion.div
@@ -653,12 +655,12 @@ function JournalTeaserSection() {
 							Thoughts from inside the house.
 						</h2>
 					</div>
-					<a
+					<Link
 						href="/blog"
 						className="text-[0.7rem] tracking-[0.25em] uppercase text-psr-gold"
 					>
 						Read the journal →
-					</a>
+					</Link>
 				</motion.div>
 				<motion.p
 					className="max-w-xl text-[0.8rem] text-psr-soft-white/70"
@@ -709,7 +711,7 @@ function FinalCtaSection() {
 					transition={{ duration: 0.6, delay: 0.05 }}
 				>
 					<PrimaryButton href="/contact">
-						Submit a private inquiry
+						Submit a private inquiry →
 					</PrimaryButton>
 					<p className="text-[0.75rem] text-neutral-700">
 						Or email us at{" "}
