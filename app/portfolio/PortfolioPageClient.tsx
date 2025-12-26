@@ -62,10 +62,9 @@ function IntroSection() {
 			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
 				<motion.div
 					className="max-w-3xl space-y-4"
-					initial={{ opacity: 0, y: 30 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.4 }}
-					transition={{ duration: 0.7 }}
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
 				>
 					<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-soft-white/60">
 						Portfolio
@@ -94,15 +93,15 @@ function ProjectGridSection() {
 					className="mt-8 grid gap-6 md:grid-cols-2"
 					initial="hidden"
 					whileInView="visible"
-					viewport={{ once: true, amount: 0.25 }}
+					viewport={{ once: true, amount: 0.1 }}
 					variants={{
-						hidden: { opacity: 0, y: 32 },
+						hidden: { opacity: 0, y: 20 },
 						visible: {
 							opacity: 1,
 							y: 0,
 							transition: {
-								duration: 0.6,
-								staggerChildren: 0.12,
+								duration: 0.5,
+								staggerChildren: 0.08,
 							},
 						},
 					}}
@@ -166,10 +165,10 @@ function FuturePortfolioSection() {
 			<div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
 				<motion.div
 					className="grid gap-10 md:grid-cols-[1.4fr,1fr]"
-					initial={{ opacity: 0, y: 30 }}
+					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.4 }}
-					transition={{ duration: 0.7 }}
+					viewport={{ once: true, amount: 0.1 }}
+					transition={{ duration: 0.5 }}
 				>
 					<div className="space-y-4">
 						<p className="text-[0.6rem] tracking-[0.3em] uppercase text-psr-ember/80">
