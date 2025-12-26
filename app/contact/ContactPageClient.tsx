@@ -355,6 +355,7 @@ function SidebarSection() {
 							>
 								phoenixstreetrealty@gmail.com
 							</a>
+							.
 						</p>
 					</div>
 					<div className="space-y-3 text-[0.85rem] text-neutral-800/85">

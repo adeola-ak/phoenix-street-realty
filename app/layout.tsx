@@ -153,6 +153,7 @@ function SiteFooter() {
 							>
 								phoenixstreetrealty@gmail.com
 							</a>
+							.
 						</p>
 						<p className="text-psr-soft-white/60">
 							Services include interior design consultations,

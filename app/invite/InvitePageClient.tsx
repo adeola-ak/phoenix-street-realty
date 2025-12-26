@@ -166,8 +166,9 @@ function CtaSection() {
 								href="mailto:phoenixstreetrealty@gmail.com"
 								className="border-b border-neutral-500 pb-[1px] hover:text-psr-ember"
 							>
-								Email us atphoenixstreetrealty@gmail.com.
+								Email us at phoenixstreetrealty@gmail.com
 							</a>
+							.
 						</p>
 					</motion.div>
 				</motion.div>
