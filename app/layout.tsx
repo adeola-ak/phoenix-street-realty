@@ -61,6 +61,21 @@ export default function RootLayout({
 						freshpaint.page();
 					`}
 				</Script>
+
+				<Script
+					src="https://www.googletagmanager.com/gtag/js?id=G-5NEFQ8Q9TX"
+					strategy="afterInteractive"
+				/>
+
+				<Script id="google-analytics" strategy="afterInteractive">
+					{`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5NEFQ8Q9TX');
+          `}
+				</Script>
+
 				<div className="flex min-h-screen flex-col">
 					<SiteHeaderClient />
 					<main className="flex-1">{children}</main>
